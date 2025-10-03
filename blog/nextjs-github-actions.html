@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deploy Next.js with GitHub Actions | Sheikh Coders Blog</title>
+    <meta
+      name="description"
+      content="Automate Next.js builds with GitHub Actions: caching, tests, deploy hooks, and bilingual safeguards for reliable releases."
+    />
+    <meta
+      name="keywords"
+      content="Next.js GitHub Actions, Next.js CI/CD, deploy hook workflow, Bangla DevOps guide, GitHub Pages Next.js, Vercel deploy automation"
+    />
+    <meta name="author" content="Sheikh Coders" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sheikhcoders.github.io/blog/nextjs-github-actions.html" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/blog/nextjs-github-actions.html" hreflang="x-default" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/blog/nextjs-github-actions.html" hreflang="en" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/blog/nextjs-github-actions.html#bangla" hreflang="bn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Deploy Next.js with GitHub Actions" />
+    <meta
+      property="og:description"
+      content="Step-by-step GitHub Actions workflow for building, testing, and deploying Next.js with secrets and rollback tips."
+    />
+    <meta property="og:url" content="https://sheikhcoders.github.io/blog/nextjs-github-actions.html" />
+    <meta property="og:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <meta property="og:site_name" content="Sheikh Coders" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="bn_BD" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Deploy Next.js with GitHub Actions" />
+    <meta
+      name="twitter:description"
+      content="Build, test, and deploy Next.js with GitHub Actions deploy hooks, caching, and bilingual resilience notes."
+    />
+    <meta name="twitter:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Deploy Next.js with GitHub Actions",
+        "inLanguage": ["en", "bn"],
+        "author": {
+          "@type": "Person",
+          "name": "Sheikh Coders"
+        },
+        "datePublished": "2024-06-02",
+        "dateModified": "2024-06-02",
+        "mainEntityOfPage": "https://sheikhcoders.github.io/blog/nextjs-github-actions.html",
+        "image": "https://sheikhcoders.github.io/assets/cover.svg",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sheikh Coders",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sheikhcoders.github.io/assets/cover.svg"
+          }
+        },
+        "description": "Automated Next.js pipeline using GitHub Actions with caching, tests, deploy hooks, and rollback tips."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sheikhcoders.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sheikhcoders.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Deploy Next.js with GitHub Actions"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="article-page">
+    <header>
+      <nav>
+        <a class="brand" href="../index.html">Sheikh Coders</a>
+        <a class="subscribe" href="mailto:hello@sheikhcoders.com">Stay in the Loop</a>
+      </nav>
+      <div class="hero">
+        <h1>Deploy Next.js with GitHub Actions</h1>
+        <p lang="en">Automate builds, tests, and deploy hooks so production stays reliable.</p>
+        <p class="bangla" lang="bn">বিল্ড, টেস্ট ও ডিপ্লয় হুক স্বয়ংক্রিয় করে প্রোডাকশনকে নির্ভরযোগ্য রাখুন।</p>
+      </div>
+    </header>
+    <main>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../index.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span>Next.js GitHub Actions</span>
+      </nav>
+      <section class="article-hero">
+        <div class="article-meta">
+          <time datetime="2024-06-02">02 Jun 2024</time>
+          <span aria-hidden="true">•</span>
+          <span>6 minute read</span>
+          <span aria-hidden="true">•</span>
+          <span>English &amp; Bangla</span>
+        </div>
+        <p lang="en">
+          GitHub Actions can build, lint, test, and deploy your Next.js project whenever you merge to main. Keep secrets encrypted and ship via
+          Vercel or GitHub Pages without manual steps.
+        </p>
+        <p class="bangla" id="bangla" lang="bn">
+          যখনই মেইন ব্রাঞ্চে মার্জ করবেন, গিটহাব অ্যাকশন্স আপনার নেক্সট.জেএস প্রজেক্ট বিল্ড, লিন্ট, টেস্ট ও ডিপ্লয় করতে পারে। সিক্রেট এনক্রিপ্ট রাখুন এবং ভার্সেল বা গিটহাব পেজেসে স্বয়ংক্রিয়ভাবে প্রকাশ করুন।
+        </p>
+      </section>
+      <aside class="toc" aria-label="Table of contents">
+        <h2>Quick navigation</h2>
+        <ol>
+          <li><a href="#workflow">Workflow overview</a></li>
+          <li><a href="#secrets">Secrets &amp; security</a></li>
+          <li><a href="#resilience">Resilience &amp; rollbacks</a></li>
+        </ol>
+      </aside>
+      <article class="article-body">
+        <section id="workflow">
+          <h2>Workflow overview</h2>
+          <p lang="en">
+            Start with a single job that checks out your repo, sets up Node.js, installs dependencies with caching, runs lint/test commands, and
+            triggers a deploy hook.
+          </p>
+          <p class="bangla" lang="bn">
+            একটি জব দিয়ে শুরু করুন যা রেপো চেকআউট করে, নোড সেটআপ করে, ক্যাশ সহ ডিপেন্ডেন্সি ইনস্টল করে, লিন্ট/টেস্ট চালায় এবং ডিপ্লয় হুক ট্রিগার করে।
+          </p>
+          <pre><code>name: Deploy Next.js
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test -- --watch=false
+      - run: npm run build
+      - name: Trigger Vercel Deploy Hook
+        run: curl -X POST "$VERCEL_DEPLOY_HOOK"</code></pre>
+          <ul>
+            <li lang="en">Swap the deploy hook for <code>actions/upload-pages-artifact</code> and <code>deploy-pages</code> to publish to GitHub Pages.</li>
+            <li class="bangla" lang="bn">গিটহাব পেজেসে প্রকাশ করতে ডিপ্লয় হুকের বদলে <code>actions/upload-pages-artifact</code> ও <code>deploy-pages</code> ব্যবহার করুন।</li>
+          </ul>
+        </section>
+        <section id="secrets">
+          <h2>Secrets &amp; security</h2>
+          <p lang="en">
+            Store deploy hooks, API keys, and environment URLs as encrypted repository secrets. Require reviewers for production environments and
+            lock workflows to specific branches.
+          </p>
+          <p class="bangla" lang="bn">
+            ডিপ্লয় হুক, এপিআই কী ও এনভায়রনমেন্ট ইউআরএল রেপো সিক্রেট হিসেবে এনক্রিপ্ট করে রাখুন। প্রোডাকশন এনভায়রনমেন্টের জন্য রিভিউয়ার আবশ্যক করুন এবং নির্দিষ্ট ব্রাঞ্চে ওয়ার্কফ্লো সীমাবদ্ধ রাখুন।
+          </p>
+          <div class="note-box" lang="en">
+            Rotate secrets quarterly and audit who has access. Pair with OIDC deployments when possible to avoid long-lived tokens.
+          </div>
+          <div class="note-box bangla" lang="bn">
+            প্রতি ত্রৈমাসিকে সিক্রেট রোটেট করুন এবং কারা অ্যাক্সেস পাচ্ছে তা অডিট করুন। সম্ভব হলে OIDC ডিপ্লয় ব্যবহার করুন যাতে দীর্ঘস্থায়ী টোকেনের প্রয়োজন না হয়।
+          </div>
+          <ul>
+            <li lang="en">Use <code>actions/cache</code> with a hash of <code>package-lock.json</code> for faster installs.</li>
+            <li class="bangla" lang="bn"><code>package-lock.json</code> এর হ্যাশ দিয়ে <code>actions/cache</code> ব্যবহার করুন যেন ইনস্টল দ্রুত হয়।</li>
+            <li lang="en">Add <code>concurrency</code> groups to auto-cancel outdated deploy runs.</li>
+            <li class="bangla" lang="bn">পুরনো ডিপ্লয় রান বাতিল করতে <code>concurrency</code> গ্রুপ সেট করুন।</li>
+          </ul>
+        </section>
+        <section id="resilience">
+          <h2>Resilience &amp; rollbacks</h2>
+          <p lang="en">
+            Wire a <code>workflow_run</code> trigger that listens for failed deploys and reverts to the previous stable build. Send Slack or email
+            alerts so teams can respond quickly.
+          </p>
+          <p class="bangla" lang="bn">
+            ডিপ্লয় ব্যর্থ হলে <code>workflow_run</code> ট্রিগার দিয়ে আগের স্থিতিশীল বিল্ডে রোলব্যাক করুন। স্ল্যাক বা ইমেইল অ্যালার্ট পাঠান যাতে টিম দ্রুত প্রতিক্রিয়া জানাতে পারে।
+          </p>
+          <ul>
+            <li lang="en">Run smoke tests against preview URLs before promoting to production.</li>
+            <li class="bangla" lang="bn">প্রোডাকশনে পাঠানোর আগে প্রিভিউ ইউআরএলে স্মোক টেস্ট চালান।</li>
+            <li lang="en">Keep an incident playbook describing rollback steps and contact points.</li>
+            <li class="bangla" lang="bn">রোলব্যাক ধাপ ও যোগাযোগ তথ্যসহ একটি ইনসিডেন্ট প্লেবুক রাখুন।</li>
+          </ul>
+        </section>
+      </article>
+      <a class="back-link" href="../index.html">← Back to all posts</a>
+    </main>
+    <footer>
+      <p lang="en">Crafted for curious technologists. Follow <a href="https://github.com/sheikhcoders">@sheikhcoders</a> for new posts.</p>
+      <p class="bangla" lang="bn">
+        অনুসন্ধিৎসু টেক উত্সাহীদের জন্য নিয়মিত আপডেট। <a href="https://github.com/sheikhcoders">@sheikhcoders</a> অনুসরণ করুন।
+      </p>
+      <p>&copy; <span id="year">2024</span> Sheikh Coders. All rights reserved.</p>
+    </footer>
+    <script>
+      const year = document.getElementById("year");
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>

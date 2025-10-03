@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Starter Guide to Next.js Performance | Sheikh Coders Blog</title>
+    <meta
+      name="description"
+      content="Tune a new Next.js project with app router best practices, font optimisation, Core Web Vitals measurement, and bilingual launch checklists."
+    />
+    <meta
+      name="keywords"
+      content="Next.js performance, Core Web Vitals, next/font optimization, Lighthouse CI, Bangla Next.js guide, app router tips"
+    />
+    <meta name="author" content="Sheikh Coders" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sheikhcoders.github.io/blog/nextjs-performance.html" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/blog/nextjs-performance.html" hreflang="x-default" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/blog/nextjs-performance.html" hreflang="en" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/blog/nextjs-performance.html#bangla" hreflang="bn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Starter Guide to Next.js Performance" />
+    <meta
+      property="og:description"
+      content="Bilingual checklist for fast Next.js launches with metadata APIs, next/font, and measurable Core Web Vitals."
+    />
+    <meta property="og:url" content="https://sheikhcoders.github.io/blog/nextjs-performance.html" />
+    <meta property="og:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <meta property="og:site_name" content="Sheikh Coders" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="bn_BD" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Starter Guide to Next.js Performance" />
+    <meta
+      name="twitter:description"
+      content="Speed up your Next.js app with bilingual tips on code splitting, fonts, image optimisation, and performance budgets."
+    />
+    <meta name="twitter:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Starter Guide to Next.js Performance",
+        "inLanguage": ["en", "bn"],
+        "author": {
+          "@type": "Person",
+          "name": "Sheikh Coders"
+        },
+        "datePublished": "2024-04-28",
+        "dateModified": "2024-04-28",
+        "mainEntityOfPage": "https://sheikhcoders.github.io/blog/nextjs-performance.html",
+        "image": "https://sheikhcoders.github.io/assets/cover.svg",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sheikh Coders",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sheikhcoders.github.io/assets/cover.svg"
+          }
+        },
+        "description": "Quick performance checklist for Next.js including metadata APIs, fonts, and Core Web Vitals."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sheikhcoders.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sheikhcoders.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Starter Guide to Next.js Performance"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="article-page">
+    <header>
+      <nav>
+        <a class="brand" href="../index.html">Sheikh Coders</a>
+        <a class="subscribe" href="mailto:hello@sheikhcoders.com">Stay in the Loop</a>
+      </nav>
+      <div class="hero">
+        <h1>Starter Guide to Next.js Performance</h1>
+        <p lang="en">Optimise your first deploy with modern routing, fonts, and measurement rituals.</p>
+        <p class="bangla" lang="bn">আধুনিক রাউটিং, ফন্ট ও মাপজোকের রুটিন দিয়ে প্রথম নেক্সট.জেএস ডিপ্লয়কে অপ্টিমাইজ করুন।</p>
+      </div>
+    </header>
+    <main>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../index.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span>Next.js Performance</span>
+      </nav>
+      <section class="article-hero">
+        <div class="article-meta">
+          <time datetime="2024-04-28">28 Apr 2024</time>
+          <span aria-hidden="true">•</span>
+          <span>5 minute read</span>
+          <span aria-hidden="true">•</span>
+          <span>English &amp; Bangla</span>
+        </div>
+        <p lang="en">
+          The Next.js app router ships opinionated defaults, but a few extra guardrails ensure lightning-fast loads and resilient SEO signals on
+          launch day.
+        </p>
+        <p class="bangla" id="bangla" lang="bn">
+          Next.js এর app router কিছু অপ্টিমাইজেশন নিয়ে আসে, তবে কয়েকটি অতিরিক্ত ধাপ নিলে লঞ্চের সময় গতি ও এসইও সুরক্ষিত থাকে।
+        </p>
+      </section>
+      <aside class="toc" aria-label="Table of contents">
+        <h2>Quick navigation</h2>
+        <ol>
+          <li><a href="#app-router">App router fundamentals</a></li>
+          <li><a href="#measure">Measure Core Web Vitals</a></li>
+          <li><a href="#ship">Ship with budgets</a></li>
+        </ol>
+      </aside>
+      <article class="article-body">
+        <section id="app-router">
+          <h2>App router fundamentals</h2>
+          <p lang="en">
+            Lean into the <code>app/</code> directory for automatic code-splitting, streaming layouts, and the new metadata APIs. Wrap fonts with
+            <code>next/font</code> to inline critical subsets without blocking render.
+          </p>
+          <p class="bangla" lang="bn">
+            স্বয়ংক্রিয় কোড স্প্লিটিং, স্ট্রিমিং লেআউট ও মেটাডাটা এপিআই পেতে <code>app/</code> ডিরেক্টরি ব্যবহার করুন। রেন্ডার ব্লক ছাড়া ক্রিটিকাল ফন্ট ইনলাইন করতে
+            <code>next/font</code> ব্যবহার করুন।
+          </p>
+          <ul>
+            <li lang="en">Enable <code>experimental.optimizePackageImports</code> to trim unused library code before bundling.</li>
+            <li class="bangla" lang="bn">বান্ডল তৈরির আগে অব্যবহৃত লাইব্রেরি কোড কমাতে <code>experimental.optimizePackageImports</code> চালু করুন।</li>
+            <li lang="en">Leverage the <code>dynamic = "force-static"</code> export for marketing pages that rarely change.</li>
+            <li class="bangla" lang="bn">কম পরিবর্তনশীল মার্কেটিং পেইজের জন্য <code>dynamic = "force-static"</code> ব্যবহার করুন।</li>
+          </ul>
+        </section>
+        <section id="measure">
+          <h2>Measure Core Web Vitals</h2>
+          <p lang="en">
+            Hook into <code>reportWebVitals</code> to stream vital metrics into your analytics provider. Pair field data with
+            lab runs from Lighthouse to catch regressions before shipping.
+          </p>
+          <p class="bangla" lang="bn">
+            <code>reportWebVitals</code> ব্যবহার করে গুরুত্বপূর্ণ মেট্রিক আপনার অ্যানালিটিক্সে পাঠান। শিপ করার আগে লাইটহাউসের ল্যাব ডেটার সাথে ফিল্ড ডেটা মিলিয়ে রিগ্রেশন ধরুন।
+          </p>
+          <pre><code class="language-js">export function reportWebVitals(metric) {
+  if (metric.name === "LCP" || metric.name === "FID") {
+    fetch("/api/vitals", {
+      method: "POST",
+      body: JSON.stringify(metric),
+    });
+  }
+}</code></pre>
+          <div class="note-box" lang="en">
+            Set baseline goals: LCP &lt; 2.5&nbsp;s, CLS &lt; 0.1, TBT &lt; 200&nbsp;ms. Track them per route, not just globally.
+          </div>
+          <div class="note-box bangla" lang="bn">
+            বেসলাইন লক্ষ্য নির্ধারণ করুন: LCP &lt; ২.৫ সেকেন্ড, CLS &lt; ০.১, TBT &lt; ২০০ মিলিসেকেন্ড। প্রতিটি রুট অনুযায়ী অগ্রগতি দেখুন।
+          </div>
+        </section>
+        <section id="ship">
+          <h2>Ship with budgets</h2>
+          <p lang="en">
+            Automate Lighthouse CI in your pipeline with thresholds that fail builds when metrics regress. Include mobile-first
+            screenshots to validate layout shifts and ensure translation fallback paths stay intact.
+          </p>
+          <p class="bangla" lang="bn">
+            মেট্রিক খারাপ হলে বিল্ড ব্যর্থ করার জন্য পাইপলাইনে লাইটহাউস সিআই স্বয়ংক্রিয় করুন। মোবাইল স্ক্রিনশট যুক্ত করুন যাতে লেআউট শিফট ও অনুবাদ ফallback দেখা যায়।
+          </p>
+          <ul>
+            <li lang="en">Test image-heavy routes with <code>next/image</code> placeholders to protect CLS.</li>
+            <li class="bangla" lang="bn">CLS নিয়ন্ত্রণে রাখতে ইমেজ-নির্ভর রুটে <code>next/image</code> প্লেসহোল্ডার ব্যবহার করুন।</li>
+            <li lang="en">Cache fonts and data fetches with <code>revalidate</code> hints tuned to content freshness.</li>
+            <li class="bangla" lang="bn">কনটেন্টের সতেজতার সাথে মিল রেখে <code>revalidate</code> হিন্ট দিয়ে ফন্ট ও ডেটা ক্যাশ করুন।</li>
+          </ul>
+        </section>
+      </article>
+      <a class="back-link" href="../index.html">← Back to all posts</a>
+    </main>
+    <footer>
+      <p lang="en">Crafted for curious technologists. Follow <a href="https://github.com/sheikhcoders">@sheikhcoders</a> for new posts.</p>
+      <p class="bangla" lang="bn">
+        অনুসন্ধিৎসু টেক উত্সাহীদের জন্য নিয়মিত আপডেট। <a href="https://github.com/sheikhcoders">@sheikhcoders</a> অনুসরণ করুন।
+      </p>
+      <p>&copy; <span id="year">2024</span> Sheikh Coders. All rights reserved.</p>
+    </footer>
+    <script>
+      const year = document.getElementById("year");
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>

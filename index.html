@@ -43,266 +43,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        color-scheme: light dark;
-        --background: #f9fafb;
-        --foreground: #111827;
-        --accent: #111827;
-        --accent-foreground: #f9fafb;
-        --muted: #6b7280;
-        --card: #ffffff;
-        --card-border: rgba(17, 24, 39, 0.08);
-        --radius: 18px;
-        font-size: 16px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        background: var(--background);
-        color: var(--foreground);
-        line-height: 1.6;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      header {
-        padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 6vw, 5rem) clamp(1.5rem, 5vw, 3rem);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      header nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .brand {
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        font-size: 0.875rem;
-      }
-
-      .subscribe {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.55rem 1.1rem;
-        border-radius: 999px;
-        background: var(--accent);
-        color: var(--accent-foreground);
-        font-weight: 600;
-        text-decoration: none;
-        transition: transform 150ms ease, box-shadow 150ms ease;
-      }
-
-      .subscribe:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 24px rgba(17, 24, 39, 0.14);
-      }
-
-      .hero {
-        display: grid;
-        gap: 0.75rem;
-        max-width: 780px;
-      }
-
-      .hero h1 {
-        margin: 0;
-        font-size: clamp(2.4rem, 6vw, 3.2rem);
-        line-height: 1.15;
-        letter-spacing: -0.015em;
-      }
-
-      .hero p {
-        margin: 0;
-        color: var(--muted);
-        font-size: clamp(1rem, 2.4vw, 1.15rem);
-      }
-
-      main {
-        padding: 0 clamp(1rem, 6vw, 5rem) clamp(4rem, 10vw, 6rem);
-      }
-
-      .grid {
-        display: grid;
-        gap: 1.75rem;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      }
-
-      article {
-        background: var(--card);
-        border-radius: var(--radius);
-        border: 1px solid var(--card-border);
-        padding: 1.75rem;
-        display: grid;
-        gap: 0.75rem;
-        transition: transform 180ms ease, box-shadow 180ms ease;
-        scroll-margin-top: 5rem;
-      }
-
-      article:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 22px 42px rgba(15, 23, 42, 0.12);
-      }
-
-      article h2 {
-        margin: 0;
-        font-size: 1.35rem;
-      }
-
-      article time {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--muted);
-      }
-
-      article p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .read-more {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-weight: 600;
-        color: var(--accent);
-        text-decoration: none;
-        font-size: 0.95rem;
-      }
-
-      .read-more svg {
-        width: 1rem;
-        height: 1rem;
-        transition: transform 150ms ease;
-      }
-
-      .read-more:hover svg {
-        transform: translateX(2px);
-      }
-
-      .full-posts {
-        margin-top: clamp(3rem, 9vw, 5rem);
-        display: grid;
-        gap: clamp(2rem, 6vw, 3rem);
-      }
-
-      .full-post {
-        background: var(--card);
-        border-radius: var(--radius);
-        border: 1px solid var(--card-border);
-        padding: clamp(1.5rem, 5vw, 2.5rem);
-        display: grid;
-        gap: 1.2rem;
-      }
-
-      .full-post h3 {
-        margin: 0;
-        font-size: clamp(1.5rem, 4vw, 1.85rem);
-      }
-
-      .full-post section {
-        display: grid;
-        gap: 0.75rem;
-      }
-
-      .full-post code {
-        background: rgba(17, 24, 39, 0.08);
-        border-radius: 6px;
-        padding: 0.2rem 0.4rem;
-        font-family: "Fira Code", "Geist Mono", monospace;
-      }
-
-      .full-post pre {
-        overflow-x: auto;
-        margin: 0;
-        background: rgba(17, 24, 39, 0.08);
-        padding: 1rem;
-        border-radius: 10px;
-        font-size: 0.95rem;
-      }
-
-      .full-post ul,
-      .full-post ol {
-        margin: 0;
-        padding-left: 1.2rem;
-        display: grid;
-        gap: 0.5rem;
-      }
-
-      .bangla {
-        font-weight: 500;
-        color: var(--foreground);
-      }
-
-      footer {
-        padding: clamp(2rem, 6vw, 3rem) clamp(1rem, 6vw, 5rem) 3rem;
-        display: grid;
-        gap: 0.5rem;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .keywords {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-
-      .keyword {
-        border-radius: 999px;
-        padding: 0.4rem 0.8rem;
-        background: rgba(17, 24, 39, 0.06);
-        font-size: 0.85rem;
-        color: var(--foreground);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --background: #020617;
-          --foreground: #f8fafc;
-          --accent: #f8fafc;
-          --accent-foreground: #020617;
-          --muted: #cbd5f5;
-          --card: rgba(15, 23, 42, 0.6);
-          --card-border: rgba(248, 250, 252, 0.1);
-        }
-
-        article {
-          background: linear-gradient(145deg, rgba(15, 23, 42, 0.72), rgba(2, 6, 23, 0.88));
-        }
-
-        .full-post {
-          background: linear-gradient(145deg, rgba(15, 23, 42, 0.78), rgba(2, 6, 23, 0.92));
-        }
-
-        .full-post code,
-        .full-post pre {
-          background: rgba(248, 250, 252, 0.08);
-        }
-
-        .keyword {
-          background: rgba(248, 250, 252, 0.1);
-          color: var(--accent-foreground);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/styles.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -323,7 +64,7 @@
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-05-10",
             "description": "Designing a minimalist, responsive landing page with semantic HTML and CSS.",
-            "url": "https://sheikhcoders.github.io/#portfolio-landing"
+            "url": "https://sheikhcoders.github.io/blog/portfolio-landing.html"
           },
           {
             "@type": "BlogPosting",
@@ -331,7 +72,7 @@
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-05-18",
             "description": "Understand how URL query parameters drive segmentation, tracking, and SEO logic with bilingual guidance.",
-            "url": "https://sheikhcoders.github.io/#query-string-seo"
+            "url": "https://sheikhcoders.github.io/blog/query-string-seo.html"
           },
           {
             "@type": "BlogPosting",
@@ -339,7 +80,7 @@
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-04-28",
             "description": "Quick performance checklist for new Next.js projects covering SEO and UX essentials.",
-            "url": "https://sheikhcoders.github.io/#nextjs-performance"
+            "url": "https://sheikhcoders.github.io/blog/nextjs-performance.html"
           },
           {
             "@type": "BlogPosting",
@@ -347,7 +88,7 @@
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-04-12",
             "description": "How to co-create helpful documentation with AI while keeping your voice clear and focused.",
-            "url": "https://sheikhcoders.github.io/#ai-writing"
+            "url": "https://sheikhcoders.github.io/blog/ai-writing-workflow.html"
           },
           {
             "@type": "BlogPosting",
@@ -355,7 +96,7 @@
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-06-02",
             "description": "Step-by-step workflow automation for building and deploying Next.js from GitHub Actions.",
-            "url": "https://sheikhcoders.github.io/#nextjs-github-actions"
+            "url": "https://sheikhcoders.github.io/blog/nextjs-github-actions.html"
           }
         ]
       }
@@ -391,7 +132,11 @@
             <span class="keyword">Minimal CSS</span>
             <span class="keyword">SEO Basics</span>
           </div>
-          <a class="read-more" href="#post-portfolio-landing" aria-label="Read the full Portfolio Landing Page article">
+          <a
+            class="read-more"
+            href="./blog/portfolio-landing.html"
+            aria-label="Read the full Portfolio Landing Page article"
+          >
             <span>Read full article</span>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -414,7 +159,11 @@
             <span class="keyword">SEO Logic</span>
             <span class="keyword">Analytics</span>
           </div>
-          <a class="read-more" href="#post-query-string-seo" aria-label="Read the full Query String SEO article">
+          <a
+            class="read-more"
+            href="./blog/query-string-seo.html"
+            aria-label="Read the full Query String SEO article"
+          >
             <span>Read full article</span>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -437,7 +186,11 @@
             <span class="keyword">Core Web Vitals</span>
             <span class="keyword">Meta Tags</span>
           </div>
-          <a class="read-more" href="#post-nextjs-performance" aria-label="Read the full Next.js performance article">
+          <a
+            class="read-more"
+            href="./blog/nextjs-performance.html"
+            aria-label="Read the full Next.js performance article"
+          >
             <span>Read full article</span>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -460,7 +213,11 @@
             <span class="keyword">Technical Writing</span>
             <span class="keyword">Productivity</span>
           </div>
-          <a class="read-more" href="#post-ai-writing" aria-label="Read the full AI writing workflow article">
+          <a
+            class="read-more"
+            href="./blog/ai-writing-workflow.html"
+            aria-label="Read the full AI writing workflow article"
+          >
             <span>Read full article</span>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -481,7 +238,11 @@
             <span class="keyword">Next.js Deploy</span>
             <span class="keyword">CI/CD</span>
           </div>
-          <a class="read-more" href="#post-nextjs-actions" aria-label="Read the full Next.js GitHub Actions article">
+          <a
+            class="read-more"
+            href="./blog/nextjs-github-actions.html"
+            aria-label="Read the full Next.js GitHub Actions article"
+          >
             <span>Read full article</span>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -489,193 +250,29 @@
           </a>
         </article>
       </section>
-      <section aria-labelledby="query-string-guide" style="margin-top: clamp(2.5rem, 8vw, 4rem); display: grid; gap: 1rem;">
-        <h2 id="query-string-guide">Query String Deep Dive (English &amp; Bangla)</h2>
+      <section class="section-intro" aria-label="Why this blog matters">
+        <h2>SEO-first notes crafted for quick action</h2>
         <p lang="en">
-          A URL query string starts after a <code>?</code> and carries key-value pairs such as
-          <code>utm_source=newsletter</code>. These parameters help filter content, power search experiences, and pass
-          analytics insights without changing the core page.
+          Every article goes beyond highlights with bilingual breakdowns, mobile-first audits, and metadata checklists so your
+          shipping momentum never slows.
         </p>
         <p class="bangla" lang="bn">
-          একটি ইউআরএল কুয়েরি স্ট্রিং <code>?</code> চিহ্নের পরে শুরু হয় এবং <code>utm_source=newsletter</code>
-          এর মতো কী-ভ্যালু জোড়া বহন করে। এসব প্যারামিটার কনটেন্ট ফিল্টার করতে, সার্চের ফল উন্নত করতে এবং মূল
-          পৃষ্ঠাটি অপরিবর্তিত রেখে অ্যানালিটিক্স তথ্য পাঠাতে সহায়তা করে।
+          প্রতিটি নিবন্ধে ইংরেজি ও বাংলায় বিশ্লেষণ, মোবাইল-ফার্স্ট অডিট এবং মেটাডাটা চেকলিস্ট দেয়া থাকে যাতে কাজের গতি কমে না।
         </p>
-        <div style="display: grid; gap: 0.75rem;">
-          <div>
-            <h3 style="margin: 0; font-size: 1.1rem;">Focused SEO Checklist</h3>
-            <ul style="margin: 0; padding-left: 1.2rem;">
-              <li lang="en">Use readable keys (<code>category=css</code>) so crawlers understand content groupings.</li>
-              <li class="bangla" lang="bn">ডাইনামিক প্যারামিটারকে গুগল সার্চ কনসোলে ডিফাইন করে ডুপ্লিকেট কনটেন্টের ঝুঁকি কমান।</li>
-              <li lang="en">Pair canonical URLs with query variants to preserve ranking signals.</li>
-              <li class="bangla" lang="bn">অ্যানালিটিক্স ট্র্যাকিং (যেমন <code>utm_</code>) শেষ হলে অপ্রয়োজনীয় প্যারামিটার অপসারণ করুন।</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin: 0; font-size: 1.1rem;">Logic Flow for Dynamic Pages</h3>
-            <ol style="margin: 0; padding-left: 1.2rem;">
-              <li lang="en">Parse the query string with built-in browser APIs like <code>URLSearchParams</code>.</li>
-              <li class="bangla" lang="bn">ফিল্টার প্রয়োগের আগে ডিফল্ট মান সেট করে মোবাইল ব্যবহারকারীর জন্য দ্রুত লোড নিশ্চিত করুন।</li>
-              <li lang="en">Cache popular combinations to keep mobile latency low and UX focused.</li>
-            </ol>
-          </div>
+        <div class="note-box" lang="en">
+          <strong>Micro SEO wins:</strong> internal linking, structured data, and performance budgets are embedded in every guide.
         </div>
-      </section>
-      <section class="full-posts" aria-label="Complete blog articles">
-        <article class="full-post" id="post-portfolio-landing">
-          <h3>Build a Clean Portfolio Landing Page</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              Start with semantic containers (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) so screen
-              readers and search engines map the layout without guesswork. Keep the hero section concise with a primary CTA and
-              a muted secondary link for recruiters who prefer quick scans.
-            </p>
-            <ul>
-              <li>Use fluid typography via <code>clamp()</code> to maintain readability from 320px to desktop screens.</li>
-              <li>Compress preview imagery with <code>&lt;picture&gt;</code> and <code>loading="lazy"</code> attributes to stay under 100&nbsp;KB.</li>
-              <li>Ship Open Graph and Twitter meta tags that match your hero copy for consistent sharing.</li>
-            </ul>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              শুরুতেই সেমান্টিক এলিমেন্ট (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) ব্যবহার করলে স্ক্রিন রিডার এবং
-              সার্চ ইঞ্জিন লেআউট সহজে বুঝতে পারে। হিরো সেকশনে একটি প্রধান কল-টু-অ্যাকশন এবং দ্রুত স্ক্যান পছন্দ করা রিক্রুটারদের জন্য একটি
-              সেকেন্ডারি লিঙ্ক রাখুন।
-            </p>
-            <ul>
-              <li><code>clamp()</code> টাইপোগ্রাফি ব্যবহার করে ৩২০ পিক্সেল থেকে ডেস্কটপ পর্যন্ত পাঠযোগ্যতা বজায় রাখুন।</li>
-              <li><code>&lt;picture&gt;</code> ও <code>loading="lazy"</code> দিয়ে প্রিভিউ ইমেজ ১০০ কিলোবাইটের মধ্যে সংকুচিত রাখুন।</li>
-              <li>ওপেন গ্রাফ ও টুইটার মেটা ট্যাগে হিরো কপির সঙ্গে সামঞ্জস্যপূর্ণ বার্তা দিন যাতে শেয়ারের সময় ভিজুয়াল এক থাকে।</li>
-            </ul>
-          </section>
-        </article>
-        <article class="full-post" id="post-query-string-seo">
-          <h3>Mastering URL Query Strings for Focused SEO</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              When you expose filters or campaign parameters, document them in your analytics playbook and Search Console settings.
-              This prevents duplicate crawling and keeps reports aligned with marketing goals.
-            </p>
-            <ol>
-              <li>Whitelist marketing keys like <code>utm_medium</code>, <code>campaign</code>, and <code>ref</code> in canonical logic.</li>
-              <li>Reject untrusted parameters server-side to block cache poisoning and reduce bundle re-renders.</li>
-              <li>Log query combinations and sort by conversions to prune low-impact URLs every quarter.</li>
-            </ol>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              ফিল্টার বা ক্যাম্পেইন প্যারামিটার ব্যবহার করলে অ্যানালিটিক্স প্লেবুক এবং সার্চ কনসোল সেটিংসে স্পষ্ট করে উল্লেখ করুন। এতে ডুপ্লিকেট ক্রলিং
-              কমে এবং রিপোর্ট মার্কেটিং লক্ষ্য অনুযায়ী থাকে।
-            </p>
-            <ol>
-              <li>ক্যানোনিকাল সেটআপে <code>utm_medium</code>, <code>campaign</code>, <code>ref</code> এর মতো মার্কেটিং কী প্রাধান্য দিন।</li>
-              <li>সার্ভার সাইডে অবিশ্বস্ত প্যারামিটার বাতিল করুন যাতে ক্যাশ পয়জনিং ও অপ্রয়োজনীয় রি-রেন্ডার কমে।</li>
-              <li>প্রতি কোয়ার্টারে কোয়েরি কম্বিনেশন লগ বিশ্লেষণ করে কম পারফর্ম করা ইউআরএল কেটে দিন।</li>
-            </ol>
-          </section>
-        </article>
-        <article class="full-post" id="post-nextjs-performance">
-          <h3>Starter Guide to Next.js Performance</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              Embrace the <code>app/</code> router for automatic code-splitting and metadata APIs. Add <code>next/font</code> for critical font
-              inlining and use <code>Image</code> for responsive asset delivery without cumulative layout shift.
-            </p>
-            <ul>
-              <li>Enable <code>experimental.optimizePackageImports</code> to trim unused library code in production.</li>
-              <li>Measure Core Web Vitals via <code>reportWebVitals</code> and push results to your preferred analytics endpoint.</li>
-              <li>Create a Lighthouse CI budget (largest contentful paint &lt; 2.5s, total blocking time &lt; 200ms) before launch.</li>
-            </ul>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              স্বয়ংক্রিয় কোড স্প্লিটিং ও মেটাডাটা এপিআই পেতে <code>app/</code> রাউটার ব্যবহার করুন। <code>next/font</code> দিয়ে ক্রিটিকাল ফন্ট ইনলাইন করুন এবং
-              <code>Image</code> কম্পোনেন্ট ব্যবহার করলে রেস্পন্সিভ ইমেজ সহজে পরিবেশন হয়।
-            </p>
-            <ul>
-              <li>প্রোডাকশনে অব্যবহৃত লাইব্রেরি কোড কমাতে <code>experimental.optimizePackageImports</code> সক্রিয় করুন।</li>
-              <li><code>reportWebVitals</code> ব্যবহার করে কোর ওয়েব ভাইটালস মাপুন এবং পছন্দের অ্যানালিটিক্স এন্ডপয়েন্টে পাঠান।</li>
-              <li>লাইভ করার আগে লাইটহাউস সি আই বাজেট সেট করুন (LCP &lt; ২.৫ সেকেন্ড, TBT &lt; ২০০ মিলিসেকেন্ড)।</li>
-            </ul>
-          </section>
-        </article>
-        <article class="full-post" id="post-ai-writing">
-          <h3>AI Writing Workflow for Developers</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              Draft outlines with prompts that specify reader level, tone, and context. Iterate by reviewing AI suggestions against your
-              project requirements, then store final snippets in a shared knowledge base.
-            </p>
-            <ul>
-              <li>Tag AI-generated changes in version control for transparent peer reviews.</li>
-              <li>Keep a reusable prompt library for changelog updates, release notes, and onboarding guides.</li>
-              <li>Automate grammar checks with CI jobs so documentation stays consistent across repos.</li>
-            </ul>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              পাঠকের স্তর, টোন ও কনটেক্সট উল্লেখ করে প্রম্পট তৈরি করলে এআই আউটলাইন স্পষ্ট হয়। প্রকল্পের প্রয়োজনীয়তার সাথে মিলিয়ে পরামর্শ যাচাই করুন
-              এবং চূড়ান্ত নোট শেয়ার্ড নলেজ বেসে সংরক্ষণ করুন।
-            </p>
-            <ul>
-              <li>পিয়ার রিভিউ সহজ করতে এআই-জেনারেটেড পরিবর্তন ভার্সন কন্ট্রোলে আলাদা ট্যাগ দিন।</li>
-              <li>চেঞ্জলগ, রিলিজ নোট ও অনবোর্ডিং গাইডের জন্য পুনঃব্যবহারযোগ্য প্রম্পট লাইব্রেরি রাখুন।</li>
-              <li>ডকুমেন্টেশন ধারাবাহিক রাখতে সি আই জবের মাধ্যমে গ্রামার চেক অটোমেট করুন।</li>
-            </ul>
-          </section>
-        </article>
-        <article class="full-post" id="post-nextjs-actions">
-          <h3>Deploy Next.js with GitHub Actions</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              GitHub Actions can build, test, and deploy your Next.js project whenever you push to the main branch. The workflow below
-              installs dependencies with caching, runs unit tests, builds the production bundle, and publishes to Vercel via a deploy hook.
-            </p>
-            <pre><code>name: Deploy Next.js
-
-on:
-  push:
-    branches: ["main"]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test -- --watch=false
-      - run: npm run build
-      - name: Trigger Vercel Deploy Hook
-        run: curl -X POST "$VERCEL_DEPLOY_HOOK"</code></pre>
-            <p>
-              Store <code>VERCEL_DEPLOY_HOOK</code> as an encrypted repository secret. If you publish static exports, replace the last step with a
-              <code>actions/upload-pages-artifact</code> and <code>actions/deploy-pages</code> pair targeting GitHub Pages.
-            </p>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              যখনই আপনি মেইন ব্রাঞ্চে পুশ করবেন, গিটহাব অ্যাকশন্স নেক্সট.জেএস প্রজেক্টের ডিপেন্ডেন্সি ইনস্টল, টেস্ট রান এবং বিল্ড তৈরি করতে পারে। নিচের
-              ওয়ার্কফ্লোটি ক্যাশ সহ ডিপেন্ডেন্সি ইনস্টল, ইউনিট টেস্ট, প্রোডাকশন বিল্ড এবং ভার্সেল ডিপ্লয় হুক ট্রিগার করে।
-            </p>
-            <p>
-              <code>VERCEL_DEPLOY_HOOK</code> সিক্রেট হিসেবে সংরক্ষণ করুন। যদি স্ট্যাটিক এক্সপোর্ট ব্যবহার করেন তবে শেষ ধাপে গিটহাব পেজেসের জন্য
-              <code>actions/upload-pages-artifact</code> এবং <code>actions/deploy-pages</code> স্টেপ ব্যবহার করুন।
-            </p>
-            <ul>
-              <li>নিজস্ব ডোমেইন সংযোগের আগে প্রিভিউ পরিবেশে বিল্ড চেক করুন।</li>
-              <li>ডিপ্লয়মেন্ট ব্যর্থ হলে <code>workflow_run</code> ইভেন্ট দিয়ে রোলব্যাক ট্রিগার করতে পারেন।</li>
-              <li>আরো নিরাপত্তার জন্য এনভায়রনমেন্ট প্রোটেকশন রুলস ও রিভিউয়ার অ্যাপ্রুভাল যুক্ত করুন।</li>
-            </ul>
-          </section>
-        </article>
+        <div class="note-box bangla" lang="bn">
+          <strong>ক্ষুদ্র এসইও সাফল্য:</strong> প্রতিটি গাইডে ইন্টারনাল লিঙ্কিং, স্ট্রাকচার্ড ডাটা ও পারফরমেন্স বাজেট নিয়ে ধাপে ধাপে নির্দেশনা রয়েছে।
+        </div>
+        <ul>
+          <li lang="en">Mobile responsive layouts validated on 320px, 768px, and desktop breakpoints.</li>
+          <li class="bangla" lang="bn">৩২০, ৭৬৮ ও ডেস্কটপ ব্রেকপয়েন্টে মোবাইল রেস্পন্সিভ লেআউট যাচাই করা হয়েছে।</li>
+          <li lang="en">Bangla translations emphasize context-sensitive terms for regional search intent.</li>
+          <li class="bangla" lang="bn">বাংলা অনুবাদে অঞ্চলভিত্তিক সার্চ ইন্টেন্ট বোঝাতে প্রাসঙ্গিক শব্দ ব্যবহার করা হয়েছে।</li>
+          <li lang="en">Practical checklists you can drop into project retros, sprint planning, or onboarding docs.</li>
+          <li class="bangla" lang="bn">প্রজেক্ট রেট্রো, স্প্রিন্ট পরিকল্পনা বা অনবোর্ডিং ডকে সরাসরি যোগ করার জন্য ব্যবহারিক চেকলিস্ট।</li>
+        </ul>
       </section>
     </main>
     <footer>
