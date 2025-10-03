@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sheikh Coders Blog | Minimal Insights in English &amp; Bangla</title>
+    <meta
+      name="description"
+      content="Sheikh Coders Blog shares focused, mobile-friendly tech insights with bilingual summaries in English and Bangla for makers and learners."
+    />
+    <meta
+      name="keywords"
+      content="Sheikh Coders blog, tech tutorials, programming tips, Bangla blog, English blog, responsive web design, minimal blog"
+    />
+    <link rel="canonical" href="https://sheikhcoders.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sheikh Coders Blog" />
+    <meta
+      property="og:description"
+      content="Minimal, mobile-first blog posts for builders with English and Bangla highlights."
+    />
+    <meta property="og:url" content="https://sheikhcoders.github.io/" />
+    <meta property="og:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sheikh Coders Blog" />
+    <meta
+      name="twitter:description"
+      content="Focused coding notes in both English and Bangla."
+    />
+    <meta name="twitter:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --background: #f9fafb;
+        --foreground: #111827;
+        --accent: #111827;
+        --accent-foreground: #f9fafb;
+        --muted: #6b7280;
+        --card: #ffffff;
+        --card-border: rgba(17, 24, 39, 0.08);
+        --radius: 18px;
+        font-size: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: var(--background);
+        color: var(--foreground);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      header {
+        padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 6vw, 5rem) clamp(1.5rem, 5vw, 3rem);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+      }
+
+      .subscribe {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--accent-foreground);
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 150ms ease, box-shadow 150ms ease;
+      }
+
+      .subscribe:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(17, 24, 39, 0.14);
+      }
+
+      .hero {
+        display: grid;
+        gap: 0.75rem;
+        max-width: 780px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(2.4rem, 6vw, 3.2rem);
+        line-height: 1.15;
+        letter-spacing: -0.015em;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.4vw, 1.15rem);
+      }
+
+      main {
+        padding: 0 clamp(1rem, 6vw, 5rem) clamp(4rem, 10vw, 6rem);
+      }
+
+      .grid {
+        display: grid;
+        gap: 1.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      article {
+        background: var(--card);
+        border-radius: var(--radius);
+        border: 1px solid var(--card-border);
+        padding: 1.75rem;
+        display: grid;
+        gap: 0.75rem;
+        height: 100%;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      article:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 42px rgba(15, 23, 42, 0.12);
+      }
+
+      article h2 {
+        margin: 0;
+        font-size: 1.35rem;
+      }
+
+      article time {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+
+      article p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .bangla {
+        font-weight: 500;
+        color: var(--foreground);
+      }
+
+      footer {
+        padding: clamp(2rem, 6vw, 3rem) clamp(1rem, 6vw, 5rem) 3rem;
+        display: grid;
+        gap: 0.5rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .keyword {
+        border-radius: 999px;
+        padding: 0.4rem 0.8rem;
+        background: rgba(17, 24, 39, 0.06);
+        font-size: 0.85rem;
+        color: var(--foreground);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #020617;
+          --foreground: #f8fafc;
+          --accent: #f8fafc;
+          --accent-foreground: #020617;
+          --muted: #cbd5f5;
+          --card: rgba(15, 23, 42, 0.6);
+          --card-border: rgba(248, 250, 252, 0.1);
+        }
+
+        article {
+          background: linear-gradient(145deg, rgba(15, 23, 42, 0.72), rgba(2, 6, 23, 0.88));
+        }
+
+        .keyword {
+          background: rgba(248, 250, 252, 0.1);
+          color: var(--accent-foreground);
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Sheikh Coders Blog",
+        "description": "Minimal, bilingual technology insights in English and Bangla.",
+        "inLanguage": ["en", "bn"],
+        "url": "https://sheikhcoders.github.io/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sheikh Coders",
+          "url": "https://sheikhcoders.github.io/"
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "Build a Clean Portfolio Landing Page",
+            "inLanguage": ["en", "bn"],
+            "datePublished": "2024-05-10",
+            "description": "Designing a minimalist, responsive landing page with semantic HTML and CSS.",
+            "url": "https://sheikhcoders.github.io/#portfolio-landing"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Starter Guide to Next.js Performance",
+            "inLanguage": ["en", "bn"],
+            "datePublished": "2024-04-28",
+            "description": "Quick performance checklist for new Next.js projects covering SEO and UX essentials.",
+            "url": "https://sheikhcoders.github.io/#nextjs-performance"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "AI Writing Workflow for Developers",
+            "inLanguage": ["en", "bn"],
+            "datePublished": "2024-04-12",
+            "description": "How to co-create helpful documentation with AI while keeping your voice clear and focused.",
+            "url": "https://sheikhcoders.github.io/#ai-writing"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <span class="brand">Sheikh Coders</span>
+        <a class="subscribe" href="mailto:hello@sheikhcoders.com">Stay in the Loop</a>
+      </nav>
+      <div class="hero">
+        <h1>Minimal tech notes with depth, ready for mobile.</h1>
+        <p lang="en">Hand-crafted articles, UX recipes, and productivity ideas for builders.</p>
+        <p class="bangla" lang="bn">মোবাইল-ফার্স্ট ফোকাসে সহজ কিন্তু প্রভাবশালী টেক নোট ও নির্দেশিকা।</p>
+      </div>
+    </header>
+    <main>
+      <section aria-label="Featured blog posts" class="grid">
+        <article id="portfolio-landing">
+          <time datetime="2024-05-10">10 May 2024</time>
+          <h2>Build a Clean Portfolio Landing Page</h2>
+          <p lang="en">
+            Learn the layout, typography, and SEO checklist for a one-page portfolio that loads fast on
+            every screen size.
+          </p>
+          <p class="bangla" lang="bn">
+            প্রতিটি ডিভাইসে দ্রুত লোড হওয়ার জন্য কীভাবে এক-পেইজের পরিচিতিমূলক ওয়েবসাইটকে সুন্দর ও
+            কার্যকরী রাখা যায় তার টিপস।
+          </p>
+          <div class="keywords" aria-label="Key topics">
+            <span class="keyword">Responsive HTML</span>
+            <span class="keyword">Minimal CSS</span>
+            <span class="keyword">SEO Basics</span>
+          </div>
+        </article>
+        <article id="nextjs-performance">
+          <time datetime="2024-04-28">28 Apr 2024</time>
+          <h2>Starter Guide to Next.js Performance</h2>
+          <p lang="en">
+            A short list of essentials: dynamic metadata, image optimization, and how to measure Core Web
+            Vitals before launch.
+          </p>
+          <p class="bangla" lang="bn">
+            এনেক্সট.জেএস অ্যাপ লাইভ করার আগে কোন মেটাডাটা, ইমেজ অপ্টিমাইজেশন ও পারফরমেন্স পরীক্ষাগুলো
+            জরুরি তা সহজ ভাষায়।
+          </p>
+          <div class="keywords" aria-label="Key topics">
+            <span class="keyword">Next.js</span>
+            <span class="keyword">Core Web Vitals</span>
+            <span class="keyword">Meta Tags</span>
+          </div>
+        </article>
+        <article id="ai-writing">
+          <time datetime="2024-04-12">12 Apr 2024</time>
+          <h2>AI Writing Workflow for Developers</h2>
+          <p lang="en">
+            Keep documentation clear: prompt planning, review loops, and tone control to make AI your
+            writing teammate.
+          </p>
+          <p class="bangla" lang="bn">
+            ডকুমেন্টেশন পরিষ্কার রাখতে প্রম্পট পরিকল্পনা, পুনঃমূল্যায়ন, ও টোন নিয়ন্ত্রণের মাধ্যমে কীভাবে
+            এআই-কে সহলেখক বানাবেন।
+          </p>
+          <div class="keywords" aria-label="Key topics">
+            <span class="keyword">AI Workflow</span>
+            <span class="keyword">Technical Writing</span>
+            <span class="keyword">Productivity</span>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p lang="en">
+        Crafted for curious technologists. Subscribe above or follow <a href="https://github.com/sheikhcoders">@sheikhcoders</a> for new posts.
+      </p>
+      <p class="bangla" lang="bn">
+        অনুসন্ধিৎসু টেক উত্সাহীদের জন্য নিয়মিত আপডেট। উপরে সাবস্ক্রাইব করুন অথবা <a href="https://github.com/sheikhcoders">@sheikhcoders</a> অনুসরণ করুন।
+      </p>
+      <p>&copy; <span id="year">2024</span> Sheikh Coders. All rights reserved.</p>
+    </footer>
+    <script>
+      const year = document.getElementById("year");
+      const currentYear = new Date().getFullYear();
+      if (year) {
+        year.textContent = currentYear;
+      }
+    </script>
+  </body>
+</html>

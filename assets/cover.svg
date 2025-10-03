@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Sheikh Coders Blog Cover</title>
+  <desc id="desc">Minimal bilingual tech blog banner for Sheikh Coders</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="48" />
+  <g fill="#f8fafc">
+    <text x="80" y="260" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="80" letter-spacing="3">
+      SHEIKH CODERS
+    </text>
+    <text x="80" y="340" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="600" font-size="46">
+      Minimal Blog · English &amp; বাংলা
+    </text>
+    <text x="80" y="420" font-family="'Inter', 'Segoe UI', sans-serif" font-size="30" fill="#cbd5f5">
+      Focused insights for makers, mobile-first every time.
+    </text>
+  </g>
+</svg>
