@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "nextjs-github-actions",
+    "title": "Deploy Next.js with GitHub Actions",
+    "date": "2024-06-02",
+    "displayDate": "02 Jun 2024",
+    "readTime": "6 min read",
+    "excerpt_en": "Automate build, test, and deployment steps for a Next.js app using reusable workflow jobs and Vercel or static hosting.",
+    "excerpt_bn": "গিটহাব অ্যাকশন্স দিয়ে কীভাবে নেক্সট.জেএস অ্যাপের বিল্ড, টেস্ট ও ডিপ্লয়মেন্ট সম্পূর্ণ স্বয়ংক্রিয় করবেন তার ধাপসমূহ।",
+    "topics": ["GitHub Actions", "Next.js Deploy", "CI/CD"],
+    "url": "/posts/nextjs-github-actions/"
+  },
+  {
+    "slug": "query-string-seo",
+    "title": "Mastering URL Query Strings for Focused SEO",
+    "date": "2024-05-18",
+    "displayDate": "18 May 2024",
+    "readTime": "5 min read",
+    "excerpt_en": "Decode how query parameters shape personalized content, campaign tracking, and crawlable experiences with clear naming logic.",
+    "excerpt_bn": "কুয়েরি প্যারামিটার দিয়ে কীভাবে ব্যক্তিকৃত কন্টেন্ট, ক্যাম্পেইন ট্র্যাকিং এবং এসইও পারফরমেন্স উন্নত করা যায় তা ধাপে ধাপে জানুন।",
+    "topics": ["URL Query String", "SEO Logic", "Analytics"],
+    "url": "/posts/query-string-seo/"
+  },
+  {
+    "slug": "portfolio-landing",
+    "title": "Build a Clean Portfolio Landing Page",
+    "date": "2024-05-10",
+    "displayDate": "10 May 2024",
+    "readTime": "4 min read",
+    "excerpt_en": "Learn the layout, typography, and SEO checklist for a one-page portfolio that loads fast on every screen size.",
+    "excerpt_bn": "প্রতিটি ডিভাইসে দ্রুত লোড হওয়ার জন্য কীভাবে এক-পেইজের পরিচিতিমূলক ওয়েবসাইটকে সুন্দর ও কার্যকরী রাখা যায় তার টিপস।",
+    "topics": ["Responsive HTML", "Minimal CSS", "SEO Basics"],
+    "url": "/posts/portfolio-landing/"
+  },
+  {
+    "slug": "nextjs-performance",
+    "title": "Starter Guide to Next.js Performance",
+    "date": "2024-04-28",
+    "displayDate": "28 Apr 2024",
+    "readTime": "5 min read",
+    "excerpt_en": "A short list of essentials: dynamic metadata, image optimization, and how to measure Core Web Vitals before launch.",
+    "excerpt_bn": "নেক্সট.জেএস অ্যাপ লাইভ করার আগে কোন মেটাডাটা, ইমেজ অপ্টিমাইজেশন ও পারফরমেন্স পরীক্ষাগুলো জরুরি তা সহজ ভাষায়।",
+    "topics": ["Next.js", "Core Web Vitals", "Meta Tags"],
+    "url": "/posts/nextjs-performance/"
+  },
+  {
+    "slug": "ai-writing",
+    "title": "AI Writing Workflow for Developers",
+    "date": "2024-04-12",
+    "displayDate": "12 Apr 2024",
+    "readTime": "4 min read",
+    "excerpt_en": "Keep documentation clear: prompt planning, review loops, and tone control to make AI your writing teammate.",
+    "excerpt_bn": "ডকুমেন্টেশন পরিষ্কার রাখতে প্রম্পট পরিকল্পনা, পুনঃমূল্যায়ন, ও টোন নিয়ন্ত্রণের মাধ্যমে কীভাবে এআই-কে সহলেখক বানাবেন।",
+    "topics": ["AI Workflow", "Technical Writing", "Productivity"],
+    "url": "/posts/ai-writing/"
+  }
+]

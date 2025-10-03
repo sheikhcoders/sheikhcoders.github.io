@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deploy Next.js with GitHub Actions | Sheikh Coders Blog</title>
+    <meta
+      name="description"
+      content="Automate build, test, and deployment steps for a Next.js app using GitHub Actions workflows, Vercel deploy hooks, and CI secrets."
+    />
+    <meta
+      name="keywords"
+      content="Next.js deployment, GitHub Actions workflow, Vercel deploy hook, CI/CD automation, Sheikh Coders blog"
+    />
+    <meta name="author" content="Sheikh Coders" />
+    <link rel="canonical" href="https://sheikhcoders.github.io/posts/nextjs-github-actions/" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/posts/nextjs-github-actions/" hreflang="x-default" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/posts/nextjs-github-actions/" hreflang="en" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/posts/nextjs-github-actions/" hreflang="bn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Deploy Next.js with GitHub Actions" />
+    <meta
+      property="og:description"
+      content="GitHub Actions build, test, and deploy pipeline for Next.js projects with bilingual guidance."
+    />
+    <meta property="og:url" content="https://sheikhcoders.github.io/posts/nextjs-github-actions/" />
+    <meta property="og:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <meta property="og:site_name" content="Sheikh Coders" />
+    <meta property="article:published_time" content="2024-06-02" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Deploy Next.js with GitHub Actions" />
+    <meta
+      name="twitter:description"
+      content="Automate Next.js deployments with GitHub Actions, caching, and deploy hooks (English & Bangla)."
+    />
+    <meta name="twitter:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Deploy Next.js with GitHub Actions",
+        "description": "Automate build, test, and deployment steps for a Next.js app using GitHub Actions workflows, Vercel deploy hooks, and CI secrets.",
+        "datePublished": "2024-06-02",
+        "dateModified": "2024-06-02",
+        "inLanguage": ["en", "bn"],
+        "url": "https://sheikhcoders.github.io/posts/nextjs-github-actions/",
+        "mainEntityOfPage": "https://sheikhcoders.github.io/posts/nextjs-github-actions/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sheikh Coders",
+          "url": "https://sheikhcoders.github.io/"
+        },
+        "articleSection": "DevOps",
+        "keywords": ["Next.js", "GitHub Actions", "CI/CD"]
+      }
+    </script>
+    <script src="/assets/site.js" defer></script>
+  </head>
+  <body>
+    <header class="post-header">
+      <nav class="top-nav" aria-label="Primary">
+        <a class="brand" href="/">Sheikh Coders</a>
+        <a class="subscribe" href="mailto:hello@sheikhcoders.com">Stay in the Loop</a>
+      </nav>
+    </header>
+    <main class="post-main">
+      <article class="post-article">
+        <header class="post-hero">
+          <p class="post-meta"><time datetime="2024-06-02">02 Jun 2024</time> • 6 min read</p>
+          <h1>Deploy Next.js with GitHub Actions</h1>
+          <p lang="en">
+            GitHub Actions can build, test, and deploy your Next.js project on every push with caching, quality gates, and a final deploy hook.
+          </p>
+          <p class="bangla" lang="bn">
+            গিটহাব অ্যাকশন্স আপনার প্রতিটি পুশের পর নেক্সট.জেএস প্রজেক্ট বিল্ড, টেস্ট ও ডিপ্লয় করতে পারে—ক্যাশ, কোয়ালিটি গেট ও ডিপ্লয় হুকসহ।
+          </p>
+          <ul class="post-topics" aria-label="Topics">
+            <li>GitHub Actions</li>
+            <li>Next.js Deploy</li>
+            <li>CI/CD</li>
+          </ul>
+        </header>
+        <section class="post-body" aria-label="English article" lang="en">
+          <p>
+            When you push to <code>main</code>, the workflow checks out code, installs dependencies with caching, runs tests, builds the production bundle, and finally triggers your deployment target.
+          </p>
+          <pre><code>name: Deploy Next.js
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test -- --watch=false
+      - run: npm run build
+      - name: Trigger Vercel Deploy Hook
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: curl -X POST "$VERCEL_DEPLOY_HOOK"</code></pre>
+          <p>
+            Store <code>VERCEL_DEPLOY_HOOK</code> as a repository secret. For static exports, replace the final step with <code>actions/upload-pages-artifact</code> followed by <code>actions/deploy-pages</code> to target GitHub Pages.
+          </p>
+          <ul>
+            <li>Use reusable workflows for linting so multiple projects inherit the same checks.</li>
+            <li>Protect <code>main</code> with required reviews and status checks before deployments run.</li>
+            <li>Log workflow run durations to spot slow npm installs or failing steps quickly.</li>
+          </ul>
+        </section>
+        <section class="post-body bangla" aria-label="Bangla article" lang="bn">
+          <p>
+            <code>main</code> ব্রাঞ্চে পুশ করলেই ওয়ার্কফ্লো কোড চেকআউট, ক্যাশসহ ডিপেন্ডেন্সি ইনস্টল, টেস্ট চালানো, প্রোডাকশন বিল্ড তৈরি এবং শেষে ডিপ্লয় হুক ট্রিগার করে।
+          </p>
+          <p>
+            উপরের উদাহরণে <code>VERCEL_DEPLOY_HOOK</code> রিপোজিটরি সিক্রেট হিসেবে সংরক্ষণ করুন। স্ট্যাটিক এক্সপোর্ট ব্যবহার করলে শেষ ধাপটি <code>actions/upload-pages-artifact</code> এবং <code>actions/deploy-pages</code> দিয়ে প্রতিস্থাপন করুন যাতে গিটহাব পেজেসে প্রকাশ করা যায়।
+          </p>
+          <ul>
+            <li>একই লিন্টিং নিয়ম সব প্রজেক্টে প্রয়োগ করতে রিইউজেবল ওয়ার্কফ্লো ব্যবহার করুন।</li>
+            <li>ডিপ্লয়ের আগে <code>main</code> ব্রাঞ্চে আবশ্যিক রিভিউ এবং স্ট্যাটাস চেক কনফিগার করুন।</li>
+            <li>ওয়ার্কফ্লো রান টাইম লগ রাখলে ধীর npm ইনস্টল বা ব্যর্থ স্টেপ দ্রুত শনাক্ত করা যায়।</li>
+          </ul>
+        </section>
+        <footer class="post-footer">
+          <a class="back-link" href="/">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Back to all posts</span>
+          </a>
+          <a class="subscribe" href="mailto:hello@sheikhcoders.com">Request a workflow review</a>
+        </footer>
+      </article>
+    </main>
+    <footer>
+      <p lang="en">
+        Crafted for curious technologists. Subscribe above or follow <a href="https://github.com/sheikhcoders">@sheikhcoders</a> for fresh posts.
+      </p>
+      <p class="bangla" lang="bn">
+        অনুসন্ধিৎসু টেক উত্সাহীদের জন্য নিয়মিত আপডেট। উপরে সাবস্ক্রাইব করুন অথবা <a href="https://github.com/sheikhcoders">@sheikhcoders</a> অনুসরণ করুন।
+      </p>
+      <p>&copy; <span data-current-year>2024</span> Sheikh Coders. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

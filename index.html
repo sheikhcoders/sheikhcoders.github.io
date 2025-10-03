@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sheikh Coders Blog | Minimal Insights in English &amp; Bangla</title>
+    <title>Sheikh Coders Blog | Bilingual Tech Notes &amp; SEO-Focused Guides</title>
     <meta
       name="description"
-      content="Sheikh Coders Blog shares focused, mobile-friendly tech insights with bilingual summaries in English and Bangla for makers and learners, including SEO-friendly URL query string strategies."
+      content="Publish bilingual (English &amp; Bangla) developer blogs with SEO-ready metadata, structured data, and mobile-first design from Sheikh Coders."
     />
     <meta
       name="keywords"
-      content="Sheikh Coders blog, tech tutorials, programming tips, Bangla blog, English blog, responsive web design, minimal blog, URL query string, SEO parameters, Bangla SEO, GitHub Actions Next.js deployment"
+      content="Sheikh Coders blog, bilingual tech blog, Bangla programming tutorials, English tech articles, SEO blog template, responsive blog design, GitHub Pages blog"
     />
     <meta name="author" content="Sheikh Coders" />
     <meta name="robots" content="index, follow" />
@@ -23,7 +23,7 @@
     <meta property="og:title" content="Sheikh Coders Blog" />
     <meta
       property="og:description"
-      content="Minimal, mobile-first blog posts for builders with English and Bangla highlights covering URL query strings, SEO logic, and performance tips."
+      content="Sheikh Coders publishes bilingual, mobile-first developer articles with structured data, SEO checklists, and automation workflows."
     />
     <meta property="og:url" content="https://sheikhcoders.github.io/" />
     <meta property="og:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
@@ -34,7 +34,7 @@
     <meta name="twitter:title" content="Sheikh Coders Blog" />
     <meta
       name="twitter:description"
-      content="Focused coding notes in both English and Bangla with URL query string best practices for SEO."
+      content="Bilingual developer notes, automation recipes, and SEO playbooks crafted for fast publishing."
     />
     <meta name="twitter:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,272 +43,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        color-scheme: light dark;
-        --background: #f9fafb;
-        --foreground: #111827;
-        --accent: #111827;
-        --accent-foreground: #f9fafb;
-        --muted: #6b7280;
-        --card: #ffffff;
-        --card-border: rgba(17, 24, 39, 0.08);
-        --radius: 18px;
-        font-size: 16px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        background: var(--background);
-        color: var(--foreground);
-        line-height: 1.6;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      header {
-        padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 6vw, 5rem) clamp(1.5rem, 5vw, 3rem);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      header nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .brand {
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        font-size: 0.875rem;
-      }
-
-      .subscribe {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.55rem 1.1rem;
-        border-radius: 999px;
-        background: var(--accent);
-        color: var(--accent-foreground);
-        font-weight: 600;
-        text-decoration: none;
-        transition: transform 150ms ease, box-shadow 150ms ease;
-      }
-
-      .subscribe:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 24px rgba(17, 24, 39, 0.14);
-      }
-
-      .hero {
-        display: grid;
-        gap: 0.75rem;
-        max-width: 780px;
-      }
-
-      .hero h1 {
-        margin: 0;
-        font-size: clamp(2.4rem, 6vw, 3.2rem);
-        line-height: 1.15;
-        letter-spacing: -0.015em;
-      }
-
-      .hero p {
-        margin: 0;
-        color: var(--muted);
-        font-size: clamp(1rem, 2.4vw, 1.15rem);
-      }
-
-      main {
-        padding: 0 clamp(1rem, 6vw, 5rem) clamp(4rem, 10vw, 6rem);
-      }
-
-      .grid {
-        display: grid;
-        gap: 1.75rem;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      }
-
-      article {
-        background: var(--card);
-        border-radius: var(--radius);
-        border: 1px solid var(--card-border);
-        padding: 1.75rem;
-        display: grid;
-        gap: 0.75rem;
-        transition: transform 180ms ease, box-shadow 180ms ease;
-        scroll-margin-top: 5rem;
-      }
-
-      article:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 22px 42px rgba(15, 23, 42, 0.12);
-      }
-
-      article h2 {
-        margin: 0;
-        font-size: 1.35rem;
-      }
-
-      article time {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--muted);
-      }
-
-      article p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .read-more {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-weight: 600;
-        color: var(--accent);
-        text-decoration: none;
-        font-size: 0.95rem;
-      }
-
-      .read-more svg {
-        width: 1rem;
-        height: 1rem;
-        transition: transform 150ms ease;
-      }
-
-      .read-more:hover svg {
-        transform: translateX(2px);
-      }
-
-      .full-posts {
-        margin-top: clamp(3rem, 9vw, 5rem);
-        display: grid;
-        gap: clamp(2rem, 6vw, 3rem);
-      }
-
-      .full-post {
-        background: var(--card);
-        border-radius: var(--radius);
-        border: 1px solid var(--card-border);
-        padding: clamp(1.5rem, 5vw, 2.5rem);
-        display: grid;
-        gap: 1.2rem;
-      }
-
-      .full-post h3 {
-        margin: 0;
-        font-size: clamp(1.5rem, 4vw, 1.85rem);
-      }
-
-      .full-post section {
-        display: grid;
-        gap: 0.75rem;
-      }
-
-      .full-post code {
-        background: rgba(17, 24, 39, 0.08);
-        border-radius: 6px;
-        padding: 0.2rem 0.4rem;
-        font-family: "Fira Code", "Geist Mono", monospace;
-      }
-
-      .full-post pre {
-        overflow-x: auto;
-        margin: 0;
-        background: rgba(17, 24, 39, 0.08);
-        padding: 1rem;
-        border-radius: 10px;
-        font-size: 0.95rem;
-      }
-
-      .full-post ul,
-      .full-post ol {
-        margin: 0;
-        padding-left: 1.2rem;
-        display: grid;
-        gap: 0.5rem;
-      }
-
-      .bangla {
-        font-weight: 500;
-        color: var(--foreground);
-      }
-
-      footer {
-        padding: clamp(2rem, 6vw, 3rem) clamp(1rem, 6vw, 5rem) 3rem;
-        display: grid;
-        gap: 0.5rem;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .keywords {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-
-      .keyword {
-        border-radius: 999px;
-        padding: 0.4rem 0.8rem;
-        background: rgba(17, 24, 39, 0.06);
-        font-size: 0.85rem;
-        color: var(--foreground);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --background: #020617;
-          --foreground: #f8fafc;
-          --accent: #f8fafc;
-          --accent-foreground: #020617;
-          --muted: #cbd5f5;
-          --card: rgba(15, 23, 42, 0.6);
-          --card-border: rgba(248, 250, 252, 0.1);
-        }
-
-        article {
-          background: linear-gradient(145deg, rgba(15, 23, 42, 0.72), rgba(2, 6, 23, 0.88));
-        }
-
-        .full-post {
-          background: linear-gradient(145deg, rgba(15, 23, 42, 0.78), rgba(2, 6, 23, 0.92));
-        }
-
-        .full-post code,
-        .full-post pre {
-          background: rgba(248, 250, 252, 0.08);
-        }
-
-        .keyword {
-          background: rgba(248, 250, 252, 0.1);
-          color: var(--accent-foreground);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/styles.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "Sheikh Coders Blog",
-        "description": "Minimal, bilingual technology insights in English and Bangla.",
+        "description": "Bilingual (English & Bangla) developer posts with SEO-ready metadata and mobile-first design.",
         "inLanguage": ["en", "bn"],
         "url": "https://sheikhcoders.github.io/",
         "publisher": {
@@ -319,406 +60,286 @@
         "blogPost": [
           {
             "@type": "BlogPosting",
-            "headline": "Build a Clean Portfolio Landing Page",
+            "headline": "Deploy Next.js with GitHub Actions",
             "inLanguage": ["en", "bn"],
-            "datePublished": "2024-05-10",
-            "description": "Designing a minimalist, responsive landing page with semantic HTML and CSS.",
-            "url": "https://sheikhcoders.github.io/#portfolio-landing"
+            "datePublished": "2024-06-02",
+            "url": "https://sheikhcoders.github.io/posts/nextjs-github-actions/"
           },
           {
             "@type": "BlogPosting",
             "headline": "Mastering URL Query Strings for Focused SEO",
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-05-18",
-            "description": "Understand how URL query parameters drive segmentation, tracking, and SEO logic with bilingual guidance.",
-            "url": "https://sheikhcoders.github.io/#query-string-seo"
+            "url": "https://sheikhcoders.github.io/posts/query-string-seo/"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Build a Clean Portfolio Landing Page",
+            "inLanguage": ["en", "bn"],
+            "datePublished": "2024-05-10",
+            "url": "https://sheikhcoders.github.io/posts/portfolio-landing/"
           },
           {
             "@type": "BlogPosting",
             "headline": "Starter Guide to Next.js Performance",
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-04-28",
-            "description": "Quick performance checklist for new Next.js projects covering SEO and UX essentials.",
-            "url": "https://sheikhcoders.github.io/#nextjs-performance"
+            "url": "https://sheikhcoders.github.io/posts/nextjs-performance/"
           },
           {
             "@type": "BlogPosting",
             "headline": "AI Writing Workflow for Developers",
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-04-12",
-            "description": "How to co-create helpful documentation with AI while keeping your voice clear and focused.",
-            "url": "https://sheikhcoders.github.io/#ai-writing"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Deploy Next.js with GitHub Actions",
-            "inLanguage": ["en", "bn"],
-            "datePublished": "2024-06-02",
-            "description": "Step-by-step workflow automation for building and deploying Next.js from GitHub Actions.",
-            "url": "https://sheikhcoders.github.io/#nextjs-github-actions"
+            "url": "https://sheikhcoders.github.io/posts/ai-writing/"
           }
         ]
       }
     </script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <span class="brand">Sheikh Coders</span>
-        <a class="subscribe" href="mailto:hello@sheikhcoders.com">Stay in the Loop</a>
-      </nav>
-      <div class="hero">
-        <h1>Minimal tech notes with depth, ready for mobile.</h1>
-        <p lang="en">Hand-crafted articles, UX recipes, and productivity ideas for builders.</p>
-        <p class="bangla" lang="bn">মোবাইল-ফার্স্ট ফোকাসে সহজ কিন্তু প্রভাবশালী টেক নোট ও নির্দেশিকা।</p>
-      </div>
-    </header>
-    <main>
-      <section aria-label="Featured blog posts" class="grid">
-        <article id="portfolio-landing">
-          <time datetime="2024-05-10">10 May 2024</time>
-          <h2>Build a Clean Portfolio Landing Page</h2>
-          <p lang="en">
-            Learn the layout, typography, and SEO checklist for a one-page portfolio that loads fast on
-            every screen size.
-          </p>
-          <p class="bangla" lang="bn">
-            প্রতিটি ডিভাইসে দ্রুত লোড হওয়ার জন্য কীভাবে এক-পেইজের পরিচিতিমূলক ওয়েবসাইটকে সুন্দর ও
-            কার্যকরী রাখা যায় তার টিপস।
-          </p>
-          <div class="keywords" aria-label="Key topics">
-            <span class="keyword">Responsive HTML</span>
-            <span class="keyword">Minimal CSS</span>
-            <span class="keyword">SEO Basics</span>
-          </div>
-          <a class="read-more" href="#post-portfolio-landing" aria-label="Read the full Portfolio Landing Page article">
-            <span>Read full article</span>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </a>
-        </article>
-        <article id="query-string-seo">
-          <time datetime="2024-05-18">18 May 2024</time>
-          <h2>Mastering URL Query Strings for Focused SEO</h2>
-          <p lang="en">
-            Decode how query parameters shape personalized content, campaign tracking, and crawlable experiences with
-            clear naming logic.
-          </p>
-          <p class="bangla" lang="bn">
-            কুয়েরি প্যারামিটার দিয়ে কীভাবে ব্যক্তিকৃত কন্টেন্ট, ক্যাম্পেইন ট্র্যাকিং এবং এসইও পারফরমেন্স উন্নত করা যায়
-            তা ধাপে ধাপে জানুন।
-          </p>
-          <div class="keywords" aria-label="Key topics">
-            <span class="keyword">URL Query String</span>
-            <span class="keyword">SEO Logic</span>
-            <span class="keyword">Analytics</span>
-          </div>
-          <a class="read-more" href="#post-query-string-seo" aria-label="Read the full Query String SEO article">
-            <span>Read full article</span>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </a>
-        </article>
-        <article id="nextjs-performance">
-          <time datetime="2024-04-28">28 Apr 2024</time>
-          <h2>Starter Guide to Next.js Performance</h2>
-          <p lang="en">
-            A short list of essentials: dynamic metadata, image optimization, and how to measure Core Web
-            Vitals before launch.
-          </p>
-          <p class="bangla" lang="bn">
-            এনেক্সট.জেএস অ্যাপ লাইভ করার আগে কোন মেটাডাটা, ইমেজ অপ্টিমাইজেশন ও পারফরমেন্স পরীক্ষাগুলো
-            জরুরি তা সহজ ভাষায়।
-          </p>
-          <div class="keywords" aria-label="Key topics">
-            <span class="keyword">Next.js</span>
-            <span class="keyword">Core Web Vitals</span>
-            <span class="keyword">Meta Tags</span>
-          </div>
-          <a class="read-more" href="#post-nextjs-performance" aria-label="Read the full Next.js performance article">
-            <span>Read full article</span>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </a>
-        </article>
-        <article id="ai-writing">
-          <time datetime="2024-04-12">12 Apr 2024</time>
-          <h2>AI Writing Workflow for Developers</h2>
-          <p lang="en">
-            Keep documentation clear: prompt planning, review loops, and tone control to make AI your
-            writing teammate.
-          </p>
-          <p class="bangla" lang="bn">
-            ডকুমেন্টেশন পরিষ্কার রাখতে প্রম্পট পরিকল্পনা, পুনঃমূল্যায়ন, ও টোন নিয়ন্ত্রণের মাধ্যমে কীভাবে
-            এআই-কে সহলেখক বানাবেন।
-          </p>
-          <div class="keywords" aria-label="Key topics">
-            <span class="keyword">AI Workflow</span>
-            <span class="keyword">Technical Writing</span>
-            <span class="keyword">Productivity</span>
-          </div>
-          <a class="read-more" href="#post-ai-writing" aria-label="Read the full AI writing workflow article">
-            <span>Read full article</span>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </a>
-        </article>
-        <article id="nextjs-github-actions">
-          <time datetime="2024-06-02">02 Jun 2024</time>
-          <h2>Deploy Next.js with GitHub Actions</h2>
-          <p lang="en">
-            Automate build, test, and deployment steps for a Next.js app using reusable workflow jobs and Vercel or static hosting.
-          </p>
-          <p class="bangla" lang="bn">
-            গিটহাব অ্যাকশন্স দিয়ে কীভাবে নেক্সট.জেএস অ্যাপের বিল্ড, টেস্ট ও ডিপ্লয়মেন্ট সম্পূর্ণ স্বয়ংক্রিয় করবেন তার ধাপসমূহ।
-          </p>
-          <div class="keywords" aria-label="Key topics">
-            <span class="keyword">GitHub Actions</span>
-            <span class="keyword">Next.js Deploy</span>
-            <span class="keyword">CI/CD</span>
-          </div>
-          <a class="read-more" href="#post-nextjs-actions" aria-label="Read the full Next.js GitHub Actions article">
-            <span>Read full article</span>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </a>
-        </article>
-      </section>
-      <section aria-labelledby="query-string-guide" style="margin-top: clamp(2.5rem, 8vw, 4rem); display: grid; gap: 1rem;">
-        <h2 id="query-string-guide">Query String Deep Dive (English &amp; Bangla)</h2>
-        <p lang="en">
-          A URL query string starts after a <code>?</code> and carries key-value pairs such as
-          <code>utm_source=newsletter</code>. These parameters help filter content, power search experiences, and pass
-          analytics insights without changing the core page.
-        </p>
-        <p class="bangla" lang="bn">
-          একটি ইউআরএল কুয়েরি স্ট্রিং <code>?</code> চিহ্নের পরে শুরু হয় এবং <code>utm_source=newsletter</code>
-          এর মতো কী-ভ্যালু জোড়া বহন করে। এসব প্যারামিটার কনটেন্ট ফিল্টার করতে, সার্চের ফল উন্নত করতে এবং মূল
-          পৃষ্ঠাটি অপরিবর্তিত রেখে অ্যানালিটিক্স তথ্য পাঠাতে সহায়তা করে।
-        </p>
-        <div style="display: grid; gap: 0.75rem;">
-          <div>
-            <h3 style="margin: 0; font-size: 1.1rem;">Focused SEO Checklist</h3>
-            <ul style="margin: 0; padding-left: 1.2rem;">
-              <li lang="en">Use readable keys (<code>category=css</code>) so crawlers understand content groupings.</li>
-              <li class="bangla" lang="bn">ডাইনামিক প্যারামিটারকে গুগল সার্চ কনসোলে ডিফাইন করে ডুপ্লিকেট কনটেন্টের ঝুঁকি কমান।</li>
-              <li lang="en">Pair canonical URLs with query variants to preserve ranking signals.</li>
-              <li class="bangla" lang="bn">অ্যানালিটিক্স ট্র্যাকিং (যেমন <code>utm_</code>) শেষ হলে অপ্রয়োজনীয় প্যারামিটার অপসারণ করুন।</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin: 0; font-size: 1.1rem;">Logic Flow for Dynamic Pages</h3>
-            <ol style="margin: 0; padding-left: 1.2rem;">
-              <li lang="en">Parse the query string with built-in browser APIs like <code>URLSearchParams</code>.</li>
-              <li class="bangla" lang="bn">ফিল্টার প্রয়োগের আগে ডিফল্ট মান সেট করে মোবাইল ব্যবহারকারীর জন্য দ্রুত লোড নিশ্চিত করুন।</li>
-              <li lang="en">Cache popular combinations to keep mobile latency low and UX focused.</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-      <section class="full-posts" aria-label="Complete blog articles">
-        <article class="full-post" id="post-portfolio-landing">
-          <h3>Build a Clean Portfolio Landing Page</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              Start with semantic containers (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) so screen
-              readers and search engines map the layout without guesswork. Keep the hero section concise with a primary CTA and
-              a muted secondary link for recruiters who prefer quick scans.
-            </p>
-            <ul>
-              <li>Use fluid typography via <code>clamp()</code> to maintain readability from 320px to desktop screens.</li>
-              <li>Compress preview imagery with <code>&lt;picture&gt;</code> and <code>loading="lazy"</code> attributes to stay under 100&nbsp;KB.</li>
-              <li>Ship Open Graph and Twitter meta tags that match your hero copy for consistent sharing.</li>
-            </ul>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              শুরুতেই সেমান্টিক এলিমেন্ট (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) ব্যবহার করলে স্ক্রিন রিডার এবং
-              সার্চ ইঞ্জিন লেআউট সহজে বুঝতে পারে। হিরো সেকশনে একটি প্রধান কল-টু-অ্যাকশন এবং দ্রুত স্ক্যান পছন্দ করা রিক্রুটারদের জন্য একটি
-              সেকেন্ডারি লিঙ্ক রাখুন।
-            </p>
-            <ul>
-              <li><code>clamp()</code> টাইপোগ্রাফি ব্যবহার করে ৩২০ পিক্সেল থেকে ডেস্কটপ পর্যন্ত পাঠযোগ্যতা বজায় রাখুন।</li>
-              <li><code>&lt;picture&gt;</code> ও <code>loading="lazy"</code> দিয়ে প্রিভিউ ইমেজ ১০০ কিলোবাইটের মধ্যে সংকুচিত রাখুন।</li>
-              <li>ওপেন গ্রাফ ও টুইটার মেটা ট্যাগে হিরো কপির সঙ্গে সামঞ্জস্যপূর্ণ বার্তা দিন যাতে শেয়ারের সময় ভিজুয়াল এক থাকে।</li>
-            </ul>
-          </section>
-        </article>
-        <article class="full-post" id="post-query-string-seo">
-          <h3>Mastering URL Query Strings for Focused SEO</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              When you expose filters or campaign parameters, document them in your analytics playbook and Search Console settings.
-              This prevents duplicate crawling and keeps reports aligned with marketing goals.
-            </p>
-            <ol>
-              <li>Whitelist marketing keys like <code>utm_medium</code>, <code>campaign</code>, and <code>ref</code> in canonical logic.</li>
-              <li>Reject untrusted parameters server-side to block cache poisoning and reduce bundle re-renders.</li>
-              <li>Log query combinations and sort by conversions to prune low-impact URLs every quarter.</li>
-            </ol>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              ফিল্টার বা ক্যাম্পেইন প্যারামিটার ব্যবহার করলে অ্যানালিটিক্স প্লেবুক এবং সার্চ কনসোল সেটিংসে স্পষ্ট করে উল্লেখ করুন। এতে ডুপ্লিকেট ক্রলিং
-              কমে এবং রিপোর্ট মার্কেটিং লক্ষ্য অনুযায়ী থাকে।
-            </p>
-            <ol>
-              <li>ক্যানোনিকাল সেটআপে <code>utm_medium</code>, <code>campaign</code>, <code>ref</code> এর মতো মার্কেটিং কী প্রাধান্য দিন।</li>
-              <li>সার্ভার সাইডে অবিশ্বস্ত প্যারামিটার বাতিল করুন যাতে ক্যাশ পয়জনিং ও অপ্রয়োজনীয় রি-রেন্ডার কমে।</li>
-              <li>প্রতি কোয়ার্টারে কোয়েরি কম্বিনেশন লগ বিশ্লেষণ করে কম পারফর্ম করা ইউআরএল কেটে দিন।</li>
-            </ol>
-          </section>
-        </article>
-        <article class="full-post" id="post-nextjs-performance">
-          <h3>Starter Guide to Next.js Performance</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              Embrace the <code>app/</code> router for automatic code-splitting and metadata APIs. Add <code>next/font</code> for critical font
-              inlining and use <code>Image</code> for responsive asset delivery without cumulative layout shift.
-            </p>
-            <ul>
-              <li>Enable <code>experimental.optimizePackageImports</code> to trim unused library code in production.</li>
-              <li>Measure Core Web Vitals via <code>reportWebVitals</code> and push results to your preferred analytics endpoint.</li>
-              <li>Create a Lighthouse CI budget (largest contentful paint &lt; 2.5s, total blocking time &lt; 200ms) before launch.</li>
-            </ul>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              স্বয়ংক্রিয় কোড স্প্লিটিং ও মেটাডাটা এপিআই পেতে <code>app/</code> রাউটার ব্যবহার করুন। <code>next/font</code> দিয়ে ক্রিটিকাল ফন্ট ইনলাইন করুন এবং
-              <code>Image</code> কম্পোনেন্ট ব্যবহার করলে রেস্পন্সিভ ইমেজ সহজে পরিবেশন হয়।
-            </p>
-            <ul>
-              <li>প্রোডাকশনে অব্যবহৃত লাইব্রেরি কোড কমাতে <code>experimental.optimizePackageImports</code> সক্রিয় করুন।</li>
-              <li><code>reportWebVitals</code> ব্যবহার করে কোর ওয়েব ভাইটালস মাপুন এবং পছন্দের অ্যানালিটিক্স এন্ডপয়েন্টে পাঠান।</li>
-              <li>লাইভ করার আগে লাইটহাউস সি আই বাজেট সেট করুন (LCP &lt; ২.৫ সেকেন্ড, TBT &lt; ২০০ মিলিসেকেন্ড)।</li>
-            </ul>
-          </section>
-        </article>
-        <article class="full-post" id="post-ai-writing">
-          <h3>AI Writing Workflow for Developers</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              Draft outlines with prompts that specify reader level, tone, and context. Iterate by reviewing AI suggestions against your
-              project requirements, then store final snippets in a shared knowledge base.
-            </p>
-            <ul>
-              <li>Tag AI-generated changes in version control for transparent peer reviews.</li>
-              <li>Keep a reusable prompt library for changelog updates, release notes, and onboarding guides.</li>
-              <li>Automate grammar checks with CI jobs so documentation stays consistent across repos.</li>
-            </ul>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              পাঠকের স্তর, টোন ও কনটেক্সট উল্লেখ করে প্রম্পট তৈরি করলে এআই আউটলাইন স্পষ্ট হয়। প্রকল্পের প্রয়োজনীয়তার সাথে মিলিয়ে পরামর্শ যাচাই করুন
-              এবং চূড়ান্ত নোট শেয়ার্ড নলেজ বেসে সংরক্ষণ করুন।
-            </p>
-            <ul>
-              <li>পিয়ার রিভিউ সহজ করতে এআই-জেনারেটেড পরিবর্তন ভার্সন কন্ট্রোলে আলাদা ট্যাগ দিন।</li>
-              <li>চেঞ্জলগ, রিলিজ নোট ও অনবোর্ডিং গাইডের জন্য পুনঃব্যবহারযোগ্য প্রম্পট লাইব্রেরি রাখুন।</li>
-              <li>ডকুমেন্টেশন ধারাবাহিক রাখতে সি আই জবের মাধ্যমে গ্রামার চেক অটোমেট করুন।</li>
-            </ul>
-          </section>
-        </article>
-        <article class="full-post" id="post-nextjs-actions">
-          <h3>Deploy Next.js with GitHub Actions</h3>
-          <section aria-label="English article" lang="en">
-            <p>
-              GitHub Actions can build, test, and deploy your Next.js project whenever you push to the main branch. The workflow below
-              installs dependencies with caching, runs unit tests, builds the production bundle, and publishes to Vercel via a deploy hook.
-            </p>
-            <pre><code>name: Deploy Next.js
-
-on:
-  push:
-    branches: ["main"]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test -- --watch=false
-      - run: npm run build
-      - name: Trigger Vercel Deploy Hook
-        run: curl -X POST "$VERCEL_DEPLOY_HOOK"</code></pre>
-            <p>
-              Store <code>VERCEL_DEPLOY_HOOK</code> as an encrypted repository secret. If you publish static exports, replace the last step with a
-              <code>actions/upload-pages-artifact</code> and <code>actions/deploy-pages</code> pair targeting GitHub Pages.
-            </p>
-          </section>
-          <section aria-label="Bangla article" class="bangla" lang="bn">
-            <p>
-              যখনই আপনি মেইন ব্রাঞ্চে পুশ করবেন, গিটহাব অ্যাকশন্স নেক্সট.জেএস প্রজেক্টের ডিপেন্ডেন্সি ইনস্টল, টেস্ট রান এবং বিল্ড তৈরি করতে পারে। নিচের
-              ওয়ার্কফ্লোটি ক্যাশ সহ ডিপেন্ডেন্সি ইনস্টল, ইউনিট টেস্ট, প্রোডাকশন বিল্ড এবং ভার্সেল ডিপ্লয় হুক ট্রিগার করে।
-            </p>
-            <p>
-              <code>VERCEL_DEPLOY_HOOK</code> সিক্রেট হিসেবে সংরক্ষণ করুন। যদি স্ট্যাটিক এক্সপোর্ট ব্যবহার করেন তবে শেষ ধাপে গিটহাব পেজেসের জন্য
-              <code>actions/upload-pages-artifact</code> এবং <code>actions/deploy-pages</code> স্টেপ ব্যবহার করুন।
-            </p>
-            <ul>
-              <li>নিজস্ব ডোমেইন সংযোগের আগে প্রিভিউ পরিবেশে বিল্ড চেক করুন।</li>
-              <li>ডিপ্লয়মেন্ট ব্যর্থ হলে <code>workflow_run</code> ইভেন্ট দিয়ে রোলব্যাক ট্রিগার করতে পারেন।</li>
-              <li>আরো নিরাপত্তার জন্য এনভায়রনমেন্ট প্রোটেকশন রুলস ও রিভিউয়ার অ্যাপ্রুভাল যুক্ত করুন।</li>
-            </ul>
-          </section>
-        </article>
-      </section>
-    </main>
-    <footer>
-      <p lang="en">
-        Crafted for curious technologists. Subscribe above or follow <a href="https://github.com/sheikhcoders">@sheikhcoders</a> for new posts.
-      </p>
-      <p class="bangla" lang="bn">
-        অনুসন্ধিৎসু টেক উত্সাহীদের জন্য নিয়মিত আপডেট। উপরে সাবস্ক্রাইব করুন অথবা <a href="https://github.com/sheikhcoders">@sheikhcoders</a> অনুসরণ করুন।
-      </p>
-      <p>&copy; <span id="year">2024</span> Sheikh Coders. All rights reserved.</p>
-    </footer>
-    <script>
-      const year = document.getElementById("year");
-      const currentYear = new Date().getFullYear();
-      if (year) {
-        year.textContent = currentYear;
-      }
-      const faqSchema = {
+    <script type="application/ld+json">
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is a URL query string?",
+            "name": "How do I publish a new bilingual blog post?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A query string is the portion of a URL after a question mark (?) that holds key-value parameters such as utm_source=newsletter for filtering or tracking content."
+              "text": "Duplicate a post template inside /posts, update English and Bangla copy, then add the metadata to assets/posts.json so the homepage lists it automatically."
             }
           },
           {
             "@type": "Question",
-            "name": "How do query strings support SEO?",
+            "name": "Is the blog optimized for SEO and mobile performance?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "When managed with readable keys, canonical URLs, and parameter definitions in Google Search Console, query strings help segment experiences without diluting SEO equity."
+              "text": "Yes. Each page ships with structured data, canonical URLs, bilingual meta tags, and a responsive layout tested for mobile-first rendering."
             }
           }
         ]
-      };
-      const faqScript = document.createElement("script");
-      faqScript.type = "application/ld+json";
-      faqScript.textContent = JSON.stringify(faqSchema);
-      document.head.appendChild(faqScript);
+      }
     </script>
+    <script src="/assets/site.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="top-nav" aria-label="Primary">
+        <a class="brand" href="/">Sheikh Coders</a>
+        <a class="subscribe" href="mailto:hello@sheikhcoders.com">Stay in the Loop</a>
+      </nav>
+      <div class="hero-banner">
+        <p class="tagline">English &amp; Bangla — Mobile-first</p>
+        <h1>Ship bilingual tech blogs with SEO confidence.</h1>
+        <p class="lead" lang="en">
+          Concise developer notes, automation checklists, and marketing-friendly copy you can publish in minutes.
+        </p>
+        <p class="lead bangla" lang="bn">
+          সংক্ষিপ্ত কিন্তু প্রভাবশালী টেক নোট ও এসইও-কেন্দ্রিক পরামর্শ, বাংলায় এবং ইংরেজিতে।
+        </p>
+      </div>
+    </header>
+    <main>
+      <section class="posts-section" aria-labelledby="latest-heading">
+        <div class="section-heading">
+          <h2 id="latest-heading">Latest bilingual posts</h2>
+          <p lang="en">Summaries in English and Bangla with <em>Continue reading</em> links for each deep dive.</p>
+          <p class="bangla" lang="bn">প্রতিটি পোস্টের জন্য সংক্ষিপ্ত সারাংশ ও <em>Continue reading</em> লিঙ্ক দেওয়া আছে।</p>
+        </div>
+        <div class="posts-grid" data-posts-grid>
+          <article class="post-card">
+            <time datetime="2024-06-02">02 Jun 2024</time>
+            <p class="reading-time">6 min read</p>
+            <h3><a href="/posts/nextjs-github-actions/">Deploy Next.js with GitHub Actions</a></h3>
+            <p lang="en">
+              Automate build, test, and deployment steps for a Next.js app using reusable workflow jobs and Vercel or static hosting.
+            </p>
+            <p class="bangla" lang="bn">
+              গিটহাব অ্যাকশন্স দিয়ে কীভাবে নেক্সট.জেএস অ্যাপের বিল্ড, টেস্ট ও ডিপ্লয়মেন্ট সম্পূর্ণ স্বয়ংক্রিয় করবেন তার ধাপসমূহ।
+            </p>
+            <ul class="topic-list" aria-label="Topics">
+              <li>GitHub Actions</li>
+              <li>Next.js Deploy</li>
+              <li>CI/CD</li>
+            </ul>
+            <a class="read-more" href="/posts/nextjs-github-actions/" aria-label="Continue reading Deploy Next.js with GitHub Actions">
+              <span>Continue reading</span>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+          <article class="post-card">
+            <time datetime="2024-05-18">18 May 2024</time>
+            <p class="reading-time">5 min read</p>
+            <h3><a href="/posts/query-string-seo/">Mastering URL Query Strings for Focused SEO</a></h3>
+            <p lang="en">
+              Decode how query parameters shape personalized content, campaign tracking, and crawlable experiences with clear naming logic.
+            </p>
+            <p class="bangla" lang="bn">
+              কুয়েরি প্যারামিটার দিয়ে কীভাবে ব্যক্তিকৃত কন্টেন্ট, ক্যাম্পেইন ট্র্যাকিং এবং এসইও পারফরমেন্স উন্নত করা যায় তা ধাপে ধাপে জানুন।
+            </p>
+            <ul class="topic-list" aria-label="Topics">
+              <li>URL Query String</li>
+              <li>SEO Logic</li>
+              <li>Analytics</li>
+            </ul>
+            <a class="read-more" href="/posts/query-string-seo/" aria-label="Continue reading Mastering URL Query Strings for Focused SEO">
+              <span>Continue reading</span>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+          <article class="post-card">
+            <time datetime="2024-05-10">10 May 2024</time>
+            <p class="reading-time">4 min read</p>
+            <h3><a href="/posts/portfolio-landing/">Build a Clean Portfolio Landing Page</a></h3>
+            <p lang="en">
+              Learn the layout, typography, and SEO checklist for a one-page portfolio that loads fast on every screen size.
+            </p>
+            <p class="bangla" lang="bn">
+              প্রতিটি ডিভাইসে দ্রুত লোড হওয়ার জন্য কীভাবে এক-পেইজের পরিচিতিমূলক ওয়েবসাইটকে সুন্দর ও কার্যকরী রাখা যায় তার টিপস।
+            </p>
+            <ul class="topic-list" aria-label="Topics">
+              <li>Responsive HTML</li>
+              <li>Minimal CSS</li>
+              <li>SEO Basics</li>
+            </ul>
+            <a class="read-more" href="/posts/portfolio-landing/" aria-label="Continue reading Build a Clean Portfolio Landing Page">
+              <span>Continue reading</span>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+          <article class="post-card">
+            <time datetime="2024-04-28">28 Apr 2024</time>
+            <p class="reading-time">5 min read</p>
+            <h3><a href="/posts/nextjs-performance/">Starter Guide to Next.js Performance</a></h3>
+            <p lang="en">
+              A short list of essentials: dynamic metadata, image optimization, and how to measure Core Web Vitals before launch.
+            </p>
+            <p class="bangla" lang="bn">
+              নেক্সট.জেএস অ্যাপ লাইভ করার আগে কোন মেটাডাটা, ইমেজ অপ্টিমাইজেশন ও পারফরমেন্স পরীক্ষাগুলো জরুরি তা সহজ ভাষায়।
+            </p>
+            <ul class="topic-list" aria-label="Topics">
+              <li>Next.js</li>
+              <li>Core Web Vitals</li>
+              <li>Meta Tags</li>
+            </ul>
+            <a class="read-more" href="/posts/nextjs-performance/" aria-label="Continue reading Starter Guide to Next.js Performance">
+              <span>Continue reading</span>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+          <article class="post-card">
+            <time datetime="2024-04-12">12 Apr 2024</time>
+            <p class="reading-time">4 min read</p>
+            <h3><a href="/posts/ai-writing/">AI Writing Workflow for Developers</a></h3>
+            <p lang="en">
+              Keep documentation clear: prompt planning, review loops, and tone control to make AI your writing teammate.
+            </p>
+            <p class="bangla" lang="bn">
+              ডকুমেন্টেশন পরিষ্কার রাখতে প্রম্পট পরিকল্পনা, পুনঃমূল্যায়ন, ও টোন নিয়ন্ত্রণের মাধ্যমে কীভাবে এআই-কে সহলেখক বানাবেন।
+            </p>
+            <ul class="topic-list" aria-label="Topics">
+              <li>AI Workflow</li>
+              <li>Technical Writing</li>
+              <li>Productivity</li>
+            </ul>
+            <a class="read-more" href="/posts/ai-writing/" aria-label="Continue reading AI Writing Workflow for Developers">
+              <span>Continue reading</span>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </section>
+      <section class="seo-section" aria-labelledby="seo-heading">
+        <div class="section-heading">
+          <h2 id="seo-heading">Built for 100% metadata coverage</h2>
+          <p lang="en">Keep every post fast, crawlable, and accessible on any screen size.</p>
+          <p class="bangla" lang="bn">প্রতিটি পোস্ট দ্রুত লোড হয়, সার্চ-ফ্রেন্ডলি থাকে এবং সব স্ক্রিনে সহজে পড়া যায়।</p>
+        </div>
+        <div class="seo-points">
+          <article class="card">
+            <h3>Structured data ready</h3>
+            <p lang="en">Blog &amp; FAQ schema ship out-of-the-box so search engines catch your highlights.</p>
+            <p class="bangla" lang="bn">ব্লগ ও এফএকিউ স্কিমা আগে থেকেই যুক্ত থাকায় সার্চ ইঞ্জিন সহজে মূল বিষয় খুঁজে পায়।</p>
+          </article>
+          <article class="card">
+            <h3>Mobile performance first</h3>
+            <p lang="en">Fluid typography, lazy assets, and responsive cards respect 320px screens upward.</p>
+            <p class="bangla" lang="bn">ফ্লুইড টাইপোগ্রাফি ও রেস্পন্সিভ কার্ড ৩২০ পিক্সেল থেকে যে কোনো স্ক্রিনে দারুণ দেখায়।</p>
+          </article>
+          <article class="card">
+            <h3>Bilingual metadata</h3>
+            <p lang="en">English and Bangla meta tags, alternates, and copy keep global and local readers aligned.</p>
+            <p class="bangla" lang="bn">ইংরেজি ও বাংলা মেটা ট্যাগ এবং কন্টেন্টের জন্য সব পাঠক একইসাথে উপকৃত হয়।</p>
+          </article>
+        </div>
+      </section>
+      <section class="workflow-section" aria-labelledby="workflow-heading">
+        <div class="section-heading">
+          <h2 id="workflow-heading">Publish a new post in three quick steps</h2>
+          <p lang="en">No frameworks required—just duplicate, edit, and list.</p>
+          <p class="bangla" lang="bn">কোনো ফ্রেমওয়ার্ক ছাড়াই শুধু কপি, সম্পাদনা ও তালিকাভুক্ত করুন।</p>
+        </div>
+        <ol class="workflow-steps">
+          <li>
+            <strong lang="en">Duplicate a template.</strong>
+            <p lang="en">Copy an existing <code>/posts/&lt;slug&gt;/</code> folder and rename it to your new slug.</p>
+            <p class="bangla" lang="bn">বিদ্যমান <code>/posts/&lt;slug&gt;/</code> ফোল্ডার কপি করে নতুন স্লাগ অনুযায়ী নাম দিন।</p>
+          </li>
+          <li>
+            <strong lang="en">Update both languages.</strong>
+            <p lang="en">Fill in the English and Bangla sections, meta tags, and structured data inside the page.</p>
+            <p class="bangla" lang="bn">পাতার ইংরেজি ও বাংলা অংশ, মেটা ট্যাগ এবং স্ট্রাকচার্ড ডেটা হালনাগাদ করুন।</p>
+          </li>
+          <li>
+            <strong lang="en">List it once.</strong>
+            <p lang="en">Add the post to <code>assets/posts.json</code> so the homepage cards and sitemap stay current.</p>
+            <p class="bangla" lang="bn"><code>assets/posts.json</code> এ তথ্য যোগ করুন যাতে হোমপেজের কার্ড ও সাইটম্যাপ আপডেট থাকে।</p>
+          </li>
+        </ol>
+      </section>
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <div class="section-heading">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <p lang="en">Still curious? Here are quick bilingual notes.</p>
+          <p class="bangla" lang="bn">আরও জানতে চাইলেই এই সংক্ষিপ্ত বাংলাও ইংরেজি নোট দেখুন।</p>
+        </div>
+        <div class="faq-grid">
+          <article class="card">
+            <h3 lang="en">How do I improve SEO for new posts?</h3>
+            <p lang="en">Use descriptive slugs, refresh the JSON list, and ensure Open Graph copy matches your hero paragraph.</p>
+            <p class="bangla" lang="bn">বর্ণনামূলক স্লাগ ব্যবহার করুন, JSON তালিকা আপডেট করুন এবং ওপেন গ্রাফ কপিকে হিরো অনুচ্ছেদের সাথে মিল রাখুন।</p>
+          </article>
+          <article class="card">
+            <h3 lang="en">Can I mix English and Bangla inside a section?</h3>
+            <p lang="en">Yes—wrap each paragraph with <code>lang</code> attributes so screen readers switch context smoothly.</p>
+            <p class="bangla" lang="bn">হ্যাঁ—প্রতিটি অনুচ্ছেদের জন্য <code>lang</code> অ্যাট্রিবিউট ব্যবহার করলে স্ক্রিন রিডার সহজে ভাষা বদলাতে পারে।</p>
+          </article>
+          <article class="card">
+            <h3 lang="en">Where do the continue reading links point?</h3>
+            <p lang="en">Each link opens a dedicated page under <code>/posts/slug/</code> with full English and Bangla content plus topics.</p>
+            <p class="bangla" lang="bn">প্রতিটি লিঙ্ক <code>/posts/slug/</code> পাতায় নিয়ে যায় যেখানে পূর্ণ বাংলা ও ইংরেজি কনটেন্ট ও বিষয়ভিত্তিক ট্যাগ রয়েছে।</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p lang="en">
+        Crafted for curious technologists. Subscribe above or follow <a href="https://github.com/sheikhcoders">@sheikhcoders</a> for fresh posts.
+      </p>
+      <p class="bangla" lang="bn">
+        অনুসন্ধিৎসু টেক উত্সাহীদের জন্য নিয়মিত আপডেট। উপরে সাবস্ক্রাইব করুন অথবা <a href="https://github.com/sheikhcoders">@sheikhcoders</a> অনুসরণ করুন।
+      </p>
+      <p>&copy; <span data-current-year>2024</span> Sheikh Coders. All rights reserved.</p>
+    </footer>
   </body>
 </html>
