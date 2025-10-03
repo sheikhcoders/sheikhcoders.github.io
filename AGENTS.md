@@ -399,3 +399,6 @@ Components
 *   [Toast](https://vercel.com/geist/toast)
 *   [Toggle](https://vercel.com/geist/toggle)
 *   [Tooltip](https://vercel.com/geist/tooltip)
+
+
+You need to cover 100000% metadata and 1000% seo and make sure bangla english both covered nicely also you can do focused ui mobile responsive 1st peority.
