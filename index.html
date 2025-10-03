@@ -7,26 +7,34 @@
     <title>Sheikh Coders Blog | Minimal Insights in English &amp; Bangla</title>
     <meta
       name="description"
-      content="Sheikh Coders Blog shares focused, mobile-friendly tech insights with bilingual summaries in English and Bangla for makers and learners."
+      content="Sheikh Coders Blog shares focused, mobile-friendly tech insights with bilingual summaries in English and Bangla for makers and learners, including SEO-friendly URL query string strategies."
     />
     <meta
       name="keywords"
-      content="Sheikh Coders blog, tech tutorials, programming tips, Bangla blog, English blog, responsive web design, minimal blog"
+      content="Sheikh Coders blog, tech tutorials, programming tips, Bangla blog, English blog, responsive web design, minimal blog, URL query string, SEO parameters, Bangla SEO"
     />
+    <meta name="author" content="Sheikh Coders" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sheikhcoders.github.io/" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/" hreflang="x-default" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/" hreflang="en" />
+    <link rel="alternate" href="https://sheikhcoders.github.io/" hreflang="bn" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Sheikh Coders Blog" />
     <meta
       property="og:description"
-      content="Minimal, mobile-first blog posts for builders with English and Bangla highlights."
+      content="Minimal, mobile-first blog posts for builders with English and Bangla highlights covering URL query strings, SEO logic, and performance tips."
     />
     <meta property="og:url" content="https://sheikhcoders.github.io/" />
     <meta property="og:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
+    <meta property="og:site_name" content="Sheikh Coders" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="bn_BD" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sheikh Coders Blog" />
     <meta
       name="twitter:description"
-      content="Focused coding notes in both English and Bangla."
+      content="Focused coding notes in both English and Bangla with URL query string best practices for SEO."
     />
     <meta name="twitter:image" content="https://sheikhcoders.github.io/assets/cover.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -241,6 +249,14 @@
           },
           {
             "@type": "BlogPosting",
+            "headline": "Mastering URL Query Strings for Focused SEO",
+            "inLanguage": ["en", "bn"],
+            "datePublished": "2024-05-18",
+            "description": "Understand how URL query parameters drive segmentation, tracking, and SEO logic with bilingual guidance.",
+            "url": "https://sheikhcoders.github.io/#query-string-seo"
+          },
+          {
+            "@type": "BlogPosting",
             "headline": "Starter Guide to Next.js Performance",
             "inLanguage": ["en", "bn"],
             "datePublished": "2024-04-28",
@@ -290,6 +306,23 @@
             <span class="keyword">SEO Basics</span>
           </div>
         </article>
+        <article id="query-string-seo">
+          <time datetime="2024-05-18">18 May 2024</time>
+          <h2>Mastering URL Query Strings for Focused SEO</h2>
+          <p lang="en">
+            Decode how query parameters shape personalized content, campaign tracking, and crawlable experiences with
+            clear naming logic.
+          </p>
+          <p class="bangla" lang="bn">
+            কুয়েরি প্যারামিটার দিয়ে কীভাবে ব্যক্তিকৃত কন্টেন্ট, ক্যাম্পেইন ট্র্যাকিং এবং এসইও পারফরমেন্স উন্নত করা যায়
+            তা ধাপে ধাপে জানুন।
+          </p>
+          <div class="keywords" aria-label="Key topics">
+            <span class="keyword">URL Query String</span>
+            <span class="keyword">SEO Logic</span>
+            <span class="keyword">Analytics</span>
+          </div>
+        </article>
         <article id="nextjs-performance">
           <time datetime="2024-04-28">28 Apr 2024</time>
           <h2>Starter Guide to Next.js Performance</h2>
@@ -325,6 +358,38 @@
           </div>
         </article>
       </section>
+      <section aria-labelledby="query-string-guide" style="margin-top: clamp(2.5rem, 8vw, 4rem); display: grid; gap: 1rem;">
+        <h2 id="query-string-guide">Query String Deep Dive (English &amp; Bangla)</h2>
+        <p lang="en">
+          A URL query string starts after a <code>?</code> and carries key-value pairs such as
+          <code>utm_source=newsletter</code>. These parameters help filter content, power search experiences, and pass
+          analytics insights without changing the core page.
+        </p>
+        <p class="bangla" lang="bn">
+          একটি ইউআরএল কুয়েরি স্ট্রিং <code>?</code> চিহ্নের পরে শুরু হয় এবং <code>utm_source=newsletter</code>
+          এর মতো কী-ভ্যালু জোড়া বহন করে। এসব প্যারামিটার কনটেন্ট ফিল্টার করতে, সার্চের ফল উন্নত করতে এবং মূল
+          পৃষ্ঠাটি অপরিবর্তিত রেখে অ্যানালিটিক্স তথ্য পাঠাতে সহায়তা করে।
+        </p>
+        <div style="display: grid; gap: 0.75rem;">
+          <div>
+            <h3 style="margin: 0; font-size: 1.1rem;">Focused SEO Checklist</h3>
+            <ul style="margin: 0; padding-left: 1.2rem;">
+              <li lang="en">Use readable keys (<code>category=css</code>) so crawlers understand content groupings.</li>
+              <li class="bangla" lang="bn">ডাইনামিক প্যারামিটারকে গুগল সার্চ কনসোলে ডিফাইন করে ডুপ্লিকেট কনটেন্টের ঝুঁকি কমান।</li>
+              <li lang="en">Pair canonical URLs with query variants to preserve ranking signals.</li>
+              <li class="bangla" lang="bn">অ্যানালিটিক্স ট্র্যাকিং (যেমন <code>utm_</code>) শেষ হলে অপ্রয়োজনীয় প্যারামিটার অপসারণ করুন।</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin: 0; font-size: 1.1rem;">Logic Flow for Dynamic Pages</h3>
+            <ol style="margin: 0; padding-left: 1.2rem;">
+              <li lang="en">Parse the query string with built-in browser APIs like <code>URLSearchParams</code>.</li>
+              <li class="bangla" lang="bn">ফিল্টার প্রয়োগের আগে ডিফল্ট মান সেট করে মোবাইল ব্যবহারকারীর জন্য দ্রুত লোড নিশ্চিত করুন।</li>
+              <li lang="en">Cache popular combinations to keep mobile latency low and UX focused.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <p lang="en">
@@ -341,6 +406,32 @@
       if (year) {
         year.textContent = currentYear;
       }
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a URL query string?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A query string is the portion of a URL after a question mark (?) that holds key-value parameters such as utm_source=newsletter for filtering or tracking content."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do query strings support SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When managed with readable keys, canonical URLs, and parameter definitions in Google Search Console, query strings help segment experiences without diluting SEO equity."
+            }
+          }
+        ]
+      };
+      const faqScript = document.createElement("script");
+      faqScript.type = "application/ld+json";
+      faqScript.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(faqScript);
     </script>
   </body>
 </html>
